@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1400" />
+	<link rel="stylesheet" href="./assets/css/style.css" />
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+
+		html {
+			min-height: 0;
+			height: auto;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		table th,
+		strong {
+			font-weight: normal;
+		}
+
+		body {
+			margin: 20px;
+		}
+
+		h1 {
+			margin: 0 0 10px 0;
+			color: #000;
+			font-size: 30px
+		}
+
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.list_w table {
+			width: 100%;
+			margin: 20px auto;
+			padding-bottom: 30px;
+			border-top: solid 2px #555;
+			border-collapse: collapse;
+			border-spacing: 0;
+			font-size: 13px;
+			text-align: center;
+		}
+
+		.list_w table tr:hover {
+			background: #f3f3f3;
+		}
+
+		.list_w table th {
+			padding: 10px 0;
+			border: solid 1px #ddd;
+			background: #efefef;
+			vertical-align: middle;
+			font-weight: 400;
+			font-size: 13px;
+		}
+
+		.list_w table td {
+			padding: 5px 3px;
+			border: solid 1px #ccc;
+			vertical-align: middle;
+		}
+
+		.lastmdate {
+			color: #1155CC;
+		}
+
+		.stand_by {
+			color: #777;
+		}
+
+		.stop {
+			color: #787878;
+		}
+
+		.ing {
+			color: blue;
+		}
+
+		.bgo {
+			text-align: left;
+		}
+
+		.end {
+			background: green;
+			color: #fff;
+		}
+
+		.end.else {
+			background: #ff5400;
+			color: #fff;
+		}
+
+		.defer {
+			color: red;
+		}
+
+		.modify {
+			color: #ff5400;
+		}
+
+		.list_w table td.link,
+		.list_w table td.td_url,
+		.list_w table td.etc {
+			text-align: left;
+			padding-left: 10px;
+		}
+
+		.ing_w {
+			border: 1px solid #000;
+			margin: 0 0 20px;
+			padding: 5px 10px;
+		}
+
+		.t_tit {
+			margin: 20px 0 10px;
+			font-size: 20px;
+		}
+
+		.ing_w .inglist {}
+
+		.ing_w .inglist li {
+			padding: 10px;
+			border-bottom: 1px solid #999;
+		}
+
+		.ing_w .inglist li:last-child {
+			border-bottom: 0;
+		}
+
+		.ing_w .inglist .date {
+			font-weight: bold;
+		}
+
+		.ing_w .inglist .text {}
+
+		.ing_w .inglist .text .ingtext {
+			font-weight: bold;
+		}
+
+		.guidelist {
+			padding: 8px 0;
+		}
+
+		.guidelist li {
+			padding: 2px 10px;
+		}
+
+		.alignleft {
+			text-align: left;
+			padding-left: 10px !important;
+		}
+
+		.depth td {
+			background: #ab0033;
+			color: #fff;
+			text-align: center;
+			font-size: 20px;
+			padding: 10px;
+		}
+
+		.depth2 td {
+			background: #ccc;
+			color: 489bff;
+			text-align: center;
+			font-size: 20px;
+			padding: 10px;
+		}
+
+		.dev_notice {
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+			padding: 10px;
+			margin: 30px 0;
+		}
+	</style>
+	<script>
+		function procedure(w, h, url) {
+			cw = screen.availWidth; //화면 넓이
+			ch = screen.availHeight; //화면 높이
+			sw = w; //띄울 창의 넓이
+			sh = h; //띄울 창의 높이
+			ml = (cw - sw) / 2; //가운데 띄우기위한 창의 x위치
+			mt = (ch - sh) / 2; //가운데 띄우기위한 창의 y위치
+			test = window.open(url, 'tst', 'width=' + sw + ',height=' + sh + ',top=' + mt + ',left=' + ml + ',resizable=no,scrollbars=yes');
+		}
+	</script>
+
+</head>
+
+<body id="guide">
+
+	<!-- eniter wrap -->
+	<div id="guide_wrap">
+		<div class="header">
+			<h1>우동학원</h1>
+			<p>End page : <span class="curr_n"></span>page / Total page : <span class="total_n"></span>page</p>
+			<p>진행율 : <span class="per"></span></p>
+		</div>
+		<div class="list_w">
+			<table class="codinglist">
+				<colgroup>
+					<col width="3%" />
+					<col />
+					<col width="35%" />
+					<col width="8%" />
+					<col width="30%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>no.</th>
+						<th>filename/link</th>
+						<th>HTML 파일명</th>
+						<th>현황</th>
+						<th>전달사항</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="depth">
+						<td colspan="5">가이드</td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="layout.html" target="_blank">레이아웃 샘플</a></td>
+						<td class="td_url"></td>
+						<td class="work ing"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="layer.html" target="_blank">레이어팝업</a></td>
+						<td class="td_url"></td>
+						<td class="work ing"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="modal.html" target="_blank">레이어팝업(모달)</a></td>
+						<td class="td_url"></td>
+						<td class="work ing"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="popup2.html" target="_blank">레이어팝업(dim bottom)</a></td>
+						<td class="td_url"></td>
+						<td class="work ing"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr class="depth">
+						<td colspan="5">페이지</td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="loading.html" target="_blank">1_로딩화면</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="main.html" target="_blank">1-1_메인화면</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="social_login_01.html" target="_blank">2-1_소셜 로그인_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="social_login_02.html" target="_blank">2-1_소셜 로그인_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_addform.html" target="_blank">2-2_학원 추가입력</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="personal_addform.html" target="_blank">2-3_개인과외자 추가입력</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_register_info.html" target="_blank">4-1_학원 상세 수강안내_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_register_info.html" target="_blank">4-1_학원 상세 수강안내_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_class_info.html" target="_blank">4-2_학원 상세 강좌안내_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_class_info.html?modal" target="_blank">4-2_학원 상세 강좌안내_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_detail_review_01.html" target="_blank">4-3_학원 상세 리뷰_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_detail_review_02.html" target="_blank">4-3_학원 상세 리뷰_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_detail_review_03.html" target="_blank">4-3_학원 상세 리뷰_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_detail_data_01.html" target="_blank">4-4_학원 상세 학원정보_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_detail_data_02.html" target="_blank">4-4_학원 상세 학원정보_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="local_choice_01.html" target="_blank">5_지역 선택 페이지_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="local_choice_02.html" target="_blank">5_지역 선택 페이지_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="local_choice_03.html" target="_blank">5_지역 선택 페이지_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">6_검색 페이지_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">6_검색 페이지_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">6_검색 페이지_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">7_카테고리 선택 페이지_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">7_카테고리 선택 페이지_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">8_푸시 알림 목록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">8_푸시 알림 목록_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-1-1_게시판1 (입시상담하기)</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-1-3_게시판1 (입시상담하기-비밀글)_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-1-3_게시판1 (입시상담하기-비밀글)_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-1-3_게시판1 (입시상담하기-비밀글)_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-2_게시판2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-3_게시판3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-4-2_게시판 상세_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-4-2_게시판 상세_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-5_수업받고싶어요 상세</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-6_게시판 등록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_4</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_5</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_6</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_7</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_8</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_9</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">9-7_게시판(수업받고 싶어요) 등록_10</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">10-1_채팅 목록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">10-2_채팅 상세</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">10-2_채팅 상세_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="#.html" target="_blank">10-2_채팅 상세_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="simple_chatting_01.html" target="_blank">10-3_간편채팅 설정</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="simple_chatting_02.html" target="_blank">10-3_간편채팅 설정_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="simple_chatting_03.html" target="_blank">10-3_간편채팅 설정_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="teacher_manage_01.html" target="_blank">11-10_학원 강사 관리_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="teacher_manage_02.html" target="_blank">11-10_학원 강사 관리_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="mydata_01.html" target="_blank">11-1_내정보_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="mydata_02.html" target="_blank">11-1_내정보_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="mydata_03.html" target="_blank">11-1_내정보_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="purchase_history.html" target="_blank">11-2_구매내역</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="review_list.html" target="_blank">11-2_리뷰목록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="interest_list_01.html" target="_blank">11-3_관심목록_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="interest_list_02.html" target="_blank">11-3_관심목록_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="write_history_01.html" target="_blank">11-4_작성 글 목록_세종 생활정보</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="write_history_02.html" target="_blank">11-4_작성 글 목록_입시 교육정보</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="write_history_03.html" target="_blank">11-4_작성 글 목록_입시 상담하기</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="write2_history_01.html" target="_blank">11-5_작성 댓글 목록_세종 생활정보</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="write2_history_02.html" target="_blank">11-5_작성 댓글 목록_입시 교육정보</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="write2_history_03.html" target="_blank">11-5_작성 댓글 목록_입시 상담하기</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="write2_history_04.html" target="_blank">11-6_수업받고 싶어요 작성 댓글 목록_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_mydata_01.html" target="_blank">11-7_학원 내정보_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_mydata_02.html" target="_blank">11-7_학원 내정보_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_profile_01.html" target="_blank">11-8_학원 프로필_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_profile_02.html" target="_blank">11-8_학원 프로필_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="class_manage_list.html" target="_blank">11-9_강좌 관리 목록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="class_register.html" target="_blank">11-9_수강등록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="notice_list.html" target="_blank">12_공지사항_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="notice_view.html" target="_blank">12_공지사항_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="faq_list.html" target="_blank">13-1_자주 묻는 질문 목록</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="faq_view.html" target="_blank">13-2_자주 묻는 질문 상세</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="term_guide.html" target="_blank">13-3_이용약관</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="term_personal.html" target="_blank">13-4_개인정보처리방침</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="setting.html" target="_blank">14_설정</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="setting_dropout.html" target="_blank">14_설정_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="cart.html" target="_blank">15_장바구니</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="payment_layer.html" target="_blank">16-1_결제하기 1_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="payment_layer.html" target="_blank">16-1_결제하기 1_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="payment_layer.html?02" target="_blank">16-1_결제하기 1_3</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="payment_01.html" target="_blank">16-2_결제하기_1</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="payment_02.html" target="_blank">16-2_결제하기_2</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="member_profile.html" target="_blank">17_회원 프로필</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="level_info_01.html" target="_blank">18_학원 등급</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="level_info_02.html" target="_blank">18_회원 등급</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+					<tr>
+						<td class="no"></td>
+						<td class="link"><a href="institute_profile.html" target="_blank">19_학원 프로필</a></td>
+						<td class="td_url"></td>
+						<td class="work"></td>
+						<td class="bgo"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function() {
+			chkList();
+			$(document).on("click", "tr a", function(e) {
+				console.log($(this).parents("tr").find(".ing"))
+				if ($(this).parents("tr").find(".ing,.end").length) {
+					return;
+				}
+				e.preventDefault();
+			});
+		});
+
+		function chkList() {
+			var tatal_n = $(".codinglist tr").length - $(".depth").length - 1;
+			var curr_n = 0;
+			var else_n = 0;
+			var $ctd = $(".codinglist td.work"),
+				$ctr = $(".codinglist tr");
+
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth() + 1; //January is 0!
+			var yyyy = today.getFullYear();
+
+			if (dd < 10) {
+				dd = '0' + dd
+			}
+
+			if (mm < 10) {
+				mm = '0' + mm
+			}
+
+			today = yyyy + '-' + mm + '-' + dd;
+
+			$ctr.each(function(index) {
+				var $this = $(this),
+					$td = $this.find("td.work");
+				if ($td.hasClass("end")) {
+					curr_n++
+					$td.text("완료");
+				} else {
+					if ($td.hasClass("ing")) {
+						$td.text(today + " 작업중").addClass('ing');
+					} else {
+						$td.text("대기중").addClass('stand_by');
+					}
+				}
+				if ($td.hasClass("else")) {
+					$td.text("보류");
+					else_n++;
+				}
+			});
+			$(".codinglist tr").each(function() {
+				var index = $(".codinglist tr").not('.depth').index(this);
+				$(this).children(".codinglist td.no").text(index);
+			});
+			$("td.link > a").each(function() {
+				var $this = $(this),
+					$t_href = $this.attr("href");
+
+				if ($this.parent(".link").hasClass("type2")) {
+					$this.parent("td").next(".td_url").append('<a href=' + $t_href + '>' + $t_href + '</a>');
+				} else {
+					$this.parent("td").next(".td_url").append('<a href=' + $t_href + ' target="_blank">' + $t_href + '</a>');
+				}
+
+			});
+			tatal_n = tatal_n - else_n;
+			curr_n = curr_n - else_n;
+			$('.total_n').text(tatal_n);
+			$('.curr_n').text(curr_n);
+			$('.per').text(Math.floor((curr_n / tatal_n) * 100) + '%');
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="./assets/css/style.css" />
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/jquery-ui.js"></script>
+	<script src="./assets/js/dynamicListener.min.js"></script>
+	<script src="./assets/js/swiper.min.js"></script>
+	<script src="./assets/js/front.js"></script>
+	<title></title>
+</head>
+
+<body class="front_body">
+	<div class="page_wrap intro_page">
+		<div class="intro_wrap">
+			<div class="swiper-container intro_swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="./assets/images/temp_intro01.png" alt=""></div>
+					<div class="swiper-slide"><img src="./assets/images/temp_intro02.png" alt=""></div>
+					<div class="swiper-slide"><img src="./assets/images/temp_intro03.png" alt=""></div>
+				</div>
+				<div class="swiper_else_row"><a href="#" class="btn_textonly bold size_16">건너뛰기</a></div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div class="btn_intro_layer">
+				<a href="#" class="btn_inro"><span class="btn_intro_text">시작하기</span></a>
+			</div>
+		</div>
+		<script>
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+			if (url_2 === "show_btn") {
+				document.querySelector(".intro_swiper").classList.add("vhidden");
+			}
+
+			// swiper
+			var intro_swiper = null;
+			const intro_swiper_slide = document.querySelectorAll(".intro_swiper .swiper-slide");
+			if (intro_swiper_slide.length > 1) {
+				intro_swiper = new Swiper(".intro_swiper", {
+					speed: 800,
+					pagination: {
+						clickable: true,
+						el: ".swiper-pagination",
+					}
+				});
+			}
+		</script>
+	</div>
+</body>
+
+</html>
