@@ -16,17 +16,57 @@
 </head>
 
 <body class="front_body">
-	<div class="page_wrap">
-		<header class="header_wrap type2">
-			<div class="header_left_group">
-				<a href="#" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
+	<form>
+		<div class="page_wrap">
+			<div class="page_wrap">
+				<a href="#" class="btn_guide" id="btn_open">열기</a>
+				<a href="#" class="btn_guide" id="btn_close">닫기</a>
 			</div>
-			<h1 class="header_title">타이틀</h1>
-		</header>
-		<section class="middle_wrap">
-			내용이 들어갑니다.
-		</section>
-	</div>
+			<!-- popup -->
+			<div class="popup_wrap" id="samplePopup">
+				<div class="bg_dim"></div>
+				<div class="popup_tb_w">
+					<div class="popup_tb">
+						<div class="popup_td">
+							<div class="popup_box">
+								<div class="popup_ico_warn"></div>
+								<div class="popup_main_copy">초 1~6 학년 수학</div>
+								<div class="popup_sub_copy">해당 수업을 장바구니에 담으시겠습니까?</div>
+								<div class="btn_popup_submit_group">
+									<a href="javascript:;" class="btn_popup_submit close_trigger"><span class="btn_popup_submit_in">취소</span></a>
+									<a href="javascript:;" class="btn_popup_submit primary close_trigger"><span class="btn_popup_submit_in">확인</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // popup -->
+		</div>
+	</form>
+	<script>
+		// 퍼블확인용
+		let url = window.location.href.split('?')[1];
+		let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+		// 선언
+		var designPopup = new DesignPopup({
+			selector: "#samplePopup"
+		});
+
+		if (url_2 === "modal") {
+			designPopup.popupShow();
+		}
+
+		document.querySelector("#btn_open").addEventListener("click", (e) => {
+			e.preventDefault();
+			designPopup.popupShow();
+		});
+		document.querySelector("#btn_close").addEventListener("click", (e) => {
+			e.preventDefault();
+			designPopup.popupHide();
+		});
+	</script>
 </body>
 
 </html>

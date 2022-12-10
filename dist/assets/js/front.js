@@ -181,9 +181,11 @@ DesignModal.prototype.bindEvent = function(option) {
 
 function DesignPopup(option) {
   this.selector = null;
-  if (option.selector !== undefined) {
-    this.selector = document.querySelector(option.selector);
+  this.option = option;
+  if (this.option.selector !== undefined) {
+    this.selector = document.querySelector(this.option.selector);
   }
+
   this.design_popup_wrap = document.querySelectorAll(".popup_wrap");
   this.domHtml = document.querySelector("html");
   this.domBody = document.querySelector("body");
@@ -192,12 +194,12 @@ function DesignPopup(option) {
   this.btn_close = null;
   this.bg_design_popup = null;
   this.scrollValue = 0;
-  this.popupShow(option);
+  // this.popupShow(option);
 }
 
-DesignPopup.prototype.popupShow = function(option) {
+DesignPopup.prototype.popupShow = function() {
   var objThis = this;
-  this.selector = document.querySelector(option.selector);
+  //this.selector = document.querySelector(option.selector);
   if (this.selector == null) {
     return;
   }
@@ -206,10 +208,10 @@ DesignPopup.prototype.popupShow = function(option) {
   this.scrollValue = window.pageYOffset;
   this.domHtml.classList.add("touchDis");
   this.selector.classList.add("active");
-  setTimeout(function() {
-    objThis.selector.classList.add("motion");
-    if ("callback" in option) {
-      option.callback();
+  setTimeout(() => {
+    this.selector.classList.add("motion");
+    if ("callback" in this.option) {
+      this.option.callback();
     }
   }, 30);
 
@@ -221,26 +223,18 @@ DesignPopup.prototype.popupShow = function(option) {
   this.bindEvent(this.selector);
   commonForm();
 }
-DesignPopup.prototype.popupHide = function(target) {
-  var objThis = this;
-  if (target !== undefined) {
-    if (typeof target == "object") {
-      this.selector = target;
-    } else {
-      this.selector = document.querySelector(target);
+DesignPopup.prototype.popupHide = function() {
+  this.selector.classList.remove("motion");
+  setTimeout(() => {
+    //remove
+    this.selector.classList.remove("active");
+    this.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
+    if (this.design_popup_wrap_active.length == 0) {
+      this.domHtml.classList.remove("touchDis");
+      this.domBody.style.marginTop = 0;
+      window.scrollTo(0, parseInt(this.domBody.getAttribute("data-scr")));
     }
-    this.selector.classList.remove("motion");
-    setTimeout(function() {
-      //remove
-      objThis.selector.classList.remove("active");
-      objThis.design_popup_wrap_active = document.querySelectorAll(".popup_wrap.active");
-      if (objThis.design_popup_wrap_active.length == 0) {
-        objThis.domHtml.classList.remove("touchDis");
-        objThis.domBody.style.marginTop = 0;
-        window.scrollTo(0, parseInt(objThis.domBody.getAttribute("data-scr")));
-      }
-    }, 420);
-  }
+  }, 420);
 }
 
 DesignPopup.prototype.bindEvent = function() {
@@ -254,7 +248,6 @@ DesignPopup.prototype.bindEvent = function() {
       element.addEventListener("click", (e) => {
         e.preventDefault();
         this.popupHide(objThis.selector);
-        console.log(element)
       }, false);
     });
   }

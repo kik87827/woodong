@@ -1,0 +1,97 @@
+/* contents */
+.btn_guide{display:inline-block;font-size:rem(16);padding:rem(15) rem(30);border:1px solid #ddd;}
+.getdata_list{
+    margin-top:rem(6);
+    > li{
+        border-bottom:1px solid #d7d7d7;padding:rem(20) rem(16);
+        &:last-of-type{}
+        &.nodata_li{
+            padding:rem(150) rem(16)
+        }
+    }
+}
+.nodata_para{color:#666;text-align: center;}
+.getdata_item{}
+.getdata_title{font-size:rem(15);color:#323232;font-weight:500;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;line-height:1.3;}
+.getdata_else_wrap{margin-top:rem(10);display:flex;flex-wrap:wrap;}
+.getdata_else{font-size:rem(11);color:#a8a8a8;line-height:1;display:inline-block;font-family: 'Montserrat','Noto Sans KR'; font-family: 'Montserrat Medium';}
+.view_skin_wrap{
+    
+}
+
+.view_title_row{
+    padding:rem(22) rem(16) rem(16);border-bottom:1px solid #d7d7d7;background:#ffffff;
+    .getdata_else_wrap{margin-top:rem(8);}
+    .getdata_else{}
+}
+.view_title{font-size:rem(15);color:#323232;font-weight:500;}
+.view_data_row{
+    padding:rem(18) rem(16);font-size:rem(14);color:#323232;word-break: break-all;
+    *{word-break: break-all;}
+    img{width:auto !important;height:auto !important;max-width:100% !important;}
+}
+.terms_wrap{padding:rem(23) 0 0 0}
+.terms_item{
+    margin-bottom:rem(45);
+    &:last-of-type{margin-bottom:0;}
+}
+.terms_title{font-size:rem(17);color:#323232;font-weight:700;line-height:1.3;}
+.terms_content{margin-top:rem(22);}
+.terms_para{
+    color:#323232;font-size:13px;margin-bottom:rem(30);line-height:1.7;
+    &:last-of-type{margin-bottom:0;}
+}
+.middle_wbox_group{margin-top:rem(60);}
+.middle_wbox{
+    background:#fff;border-radius:rem(15);padding:rem(32) rem(24);
+    &:last-of-type{}
+}
+.cirdot_list{
+    font-size:rem(15);color:#323232;line-height:1;
+    > li {
+        position:relative;padding-left:rem(19);margin-bottom:rem(21);
+        &:before{display:block;content:'';width:rem(11);height:rem(11);border-radius:100%;width:rem(4);height:rem(4);border:rem(4) solid #e6b2c1;position:absolute;top:rem(5);left:0;background:#fff;}
+        &:last-of-type{margin-bottom:0;}
+    }
+}
+.cirdot_sig{font-weight:500;line-height:1.4;}
+.cirdot_sub_g{margin-top:rem(5);line-height:1.4;}
+.cirdot_sub{}
+.dash_list{
+    > li {
+        margin-bottom:rem(10);position:relative;padding-left:rem(9);
+        &:before{display:block;content:'-';position:absolute;top:0;left:0;}
+        &:last-of-type{margin-bottom:0;}
+    }
+}
+
+
+/* 공통 popup */
+.popup_wrap{position:fixed;top:0;left:0;width:100%;height:100%;z-index:100000;display:none;align-items: center;justify-content: center;min-width:rem(280);overflow:hidden;flex-wrap:wrap;}
+.popup_tb_w{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;overflow-y:auto;opacity:0;transition:.4s;z-index:5;}
+.popup_tb{
+    display:table;width:100%;table-layout: fixed;height:100%;position:absolute;top:0;left:0;z-index:0;
+}
+.popup_td{
+    display:table-cell;vertical-align: middle;padding:rem(25);
+}
+.bg_dim{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:1;opacity:0;transition:.4s;}
+
+.popup_box{background:#fff;border-radius:rem(19);box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);text-align: center;padding:rem(20) rem(18)}
+
+.popup_wrap.active{display:flex}
+.popup_wrap.active.motion .popup_tb_w{opacity:1;transform: translateY(0);}
+.popup_wrap.active.motion .bg_dim{opacity:.2;}
+
+.popup_ico_warn{width:rem(51);height:rem(56.33);margin:0 auto rem(22);background:url("../images/ico_warn.png") no-repeat 50% 50%/100% auto;}
+.popup_main_copy{font-size:rem(18);color:#1e1e1e;line-height:1;font-weight:700;}
+.popup_sub_copy{margin-top:rem(15);font-size:rem(14);color:#838287;font-weight:500;}
+.btn_popup_submit_group{margin:rem(26) rem(-3) rem(-3);display:flex;}
+.btn_popup_submit{
+    color:#323232;line-height:0;font-size:0;background:#f4f0f0;flex:1;min-width:0;display:flex;align-items: center;justify-content: center;min-height:rem(53);border-radius:rem(9);margin:rem(3);box-sizing: border-box;padding:rem(15);
+    &.primary{background:#ab0033;color:#fff;}
+}
+.btn_popup_submit_in{display:inline-block;line-height:1;font-weight:500;font-size:rem(18);}
+@media(max-width:1023px){
+    
+}

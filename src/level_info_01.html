@@ -2,16 +2,51 @@
 <html lang="ko">
 @@include('./include/head.html')
 <body class="front_body">
-	<div class="page_wrap">
-		<header class="header_wrap type2">
-			<div class="header_left_group">
-				<a href="#" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
-			</div>
-			<h1 class="header_title">타이틀</h1>
-		</header>
-		<section class="middle_wrap">
-			내용이 들어갑니다.
-		</section>
-	</div>
+	<form>
+		<div class="page_wrap">
+			<header class="header_wrap">
+				<div class="header_main">
+					<div class="header_title_group">
+						<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
+						<h1 class="header_sub_title">학원 등급 정보</h1>
+					</div>
+				</div>
+			</header>
+			<section class="middle_wrap">
+				<div class="middle_wbox_group">
+					<div class="middle_wbox">
+						<ul class="cirdot_list">
+							<li>
+								<p class="cirdot_sig">학원 등급은 6개월 단위로 산정합니다.</p>
+							</li>
+							<li>
+								<p class="cirdot_sig">좋아요 600개 만점 기준 50점 환산</p>
+								<div class="cirdot_sub_g">
+									<p class="cirdot_sub">(600개 이상 = 50점)</p>
+								</div>
+							</li>
+							<li>
+								<p class="cirdot_sig">게시판 답변 개수</p>
+								<div class="cirdot_sub_g">
+									<p class="cirdot_sub">1일 1회 이상 작성 시 1점, 없을 경우 0점<br>(1,800점 만점 = 50점 환산)</p>
+								</div>
+							</li>
+							<li>
+								<p class="cirdot_sig">환산점수</p>
+								<div class="cirdot_sub_g">
+									<ul class="dash_list">
+										<li>90점 이상 ( 금 )</li>
+										<li>70점 이상 ( 은 )</li>
+										<li>50점 이상 ( 동 )</li>
+										<li>50점 이하 ( 없음 )</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</div>
+	</form>
 </body>
 </html>

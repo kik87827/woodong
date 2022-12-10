@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* default */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -298,6 +297,114 @@ html.smooth {
   font-style: normal;
   font-weight: 700;
   src: local("Noto Sans KR"), url("./webfont/NotoSans-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Regular"), url("./webfont/Montserrat-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Italic"), url("./webfont/Montserrat-Italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Thin"), url("./webfont/Montserrat-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Thin Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Thin Italic"), url("./webfont/Montserrat-ThinItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat ExtraLight";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat ExtraLight"), url("./webfont/Montserrat-ExtraLight.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat ExtraLight Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat ExtraLight Italic"), url("./webfont/Montserrat-ExtraLightItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Light"), url("./webfont/Montserrat-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Light Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Light Italic"), url("./webfont/Montserrat-LightItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Medium"), url("./webfont/Montserrat-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Medium Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Medium Italic"), url("./webfont/Montserrat-MediumItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat SemiBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat SemiBold"), url("./webfont/Montserrat-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat SemiBold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat SemiBold Italic"), url("./webfont/Montserrat-SemiBoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Bold"), url("./webfont/Montserrat-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Bold Italic"), url("Montserrat-BoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat ExtraBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat ExtraBold"), url("Montserrat-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat ExtraBold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat ExtraBold Italic"), url("Montserrat-ExtraBoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Black"), url("Montserrat-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat Black Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montserrat Black Italic"), url("Montserrat-BlackItalic.woff") format("woff");
 }
 /**
  * Swiper 4.5.0
@@ -877,6 +984,12 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   min-height: 100vh;
   background: #f9f9f9;
 }
+.front_body.bg2 {
+  background: #fafafa;
+}
+.front_body.bg3 {
+  background: #fff;
+}
 
 .page_wrap {
   position: relative;
@@ -891,10 +1004,8 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
+  z-index: 30;
   box-shadow: 1px 6px 23px -4px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 1px 6px 23px -4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 1px 6px 23px -4px rgba(0, 0, 0, 0.1);
@@ -974,11 +1085,34 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .head_menu.ico_notice {
   background-position: 0 -2.75rem;
 }
+.head_menu.ico_like {
+  background-position: 0 -4.125rem;
+}
+.head_menu.ico_share {
+  background-position: 0 -5.5rem;
+}
 
 .middle_wrap {
-  padding: 4.16625rem 1rem 0;
+  padding: 0 1rem 4.16625rem;
   box-sizing: border-box;
-  min-height: 100vh;
+}
+.middle_wrap.type2 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.has_topbg {
+  position: relative;
+}
+.has_topbg:before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1.25rem;
+  background: #fff;
+  position: absolute;
+  top: -1.25rem;
+  left: 0;
 }
 
 .bottom_layer_wrap {
@@ -2373,5 +2507,310 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   height: 100%;
   z-index: 1000;
   background: #ab0033 url("../images/loading_logo.png") no-repeat 50% 50%/101.6666666667px 103.6666666667px;
+} /* contents */
+.btn_guide {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.9375rem 1.875rem;
+  border: 1px solid #ddd;
+}
+
+.getdata_list {
+  margin-top: 0.375rem;
+}
+.getdata_list > li {
+  border-bottom: 1px solid #d7d7d7;
+  padding: 1.25rem 1rem;
+}
+.getdata_list > li.nodata_li {
+  padding: 9.375rem 1rem;
+}
+
+.nodata_para {
+  color: #666;
+  text-align: center;
+}
+
+.getdata_title {
+  font-size: 0.9375rem;
+  color: #323232;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.getdata_else_wrap {
+  margin-top: 0.625rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.getdata_else {
+  font-size: 0.6875rem;
+  color: #a8a8a8;
+  line-height: 1;
+  display: inline-block;
+  font-family: "Montserrat", "Noto Sans KR";
+  font-family: "Montserrat Medium";
+}
+
+.view_title_row {
+  padding: 1.375rem 1rem 1rem;
+  border-bottom: 1px solid #d7d7d7;
+  background: #ffffff;
+}
+.view_title_row .getdata_else_wrap {
+  margin-top: 0.5rem;
+}
+.view_title {
+  font-size: 0.9375rem;
+  color: #323232;
+  font-weight: 500;
+}
+
+.view_data_row {
+  padding: 1.125rem 1rem;
+  font-size: 0.875rem;
+  color: #323232;
+  word-break: break-all;
+}
+.view_data_row * {
+  word-break: break-all;
+}
+.view_data_row img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+}
+
+.terms_wrap {
+  padding: 1.4375rem 0 0 0;
+}
+
+.terms_item {
+  margin-bottom: 2.8125rem;
+}
+.terms_item:last-of-type {
+  margin-bottom: 0;
+}
+
+.terms_title {
+  font-size: 1.0625rem;
+  color: #323232;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.terms_content {
+  margin-top: 1.375rem;
+}
+
+.terms_para {
+  color: #323232;
+  font-size: 13px;
+  margin-bottom: 1.875rem;
+  line-height: 1.7;
+}
+.terms_para:last-of-type {
+  margin-bottom: 0;
+}
+
+.middle_wbox_group {
+  margin-top: 3.75rem;
+}
+
+.middle_wbox {
+  background: #fff;
+  border-radius: 0.9375rem;
+  padding: 2rem 1.5rem;
+}
+.cirdot_list {
+  font-size: 0.9375rem;
+  color: #323232;
+  line-height: 1;
+}
+.cirdot_list > li {
+  position: relative;
+  padding-left: 1.1875rem;
+  margin-bottom: 1.3125rem;
+}
+.cirdot_list > li:before {
+  display: block;
+  content: "";
+  width: 0.6875rem;
+  height: 0.6875rem;
+  border-radius: 100%;
+  width: 0.25rem;
+  height: 0.25rem;
+  border: 0.25rem solid #e6b2c1;
+  position: absolute;
+  top: 0.3125rem;
+  left: 0;
+  background: #fff;
+}
+.cirdot_list > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.cirdot_sig {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.cirdot_sub_g {
+  margin-top: 0.3125rem;
+  line-height: 1.4;
+}
+
+.dash_list > li {
+  margin-bottom: 0.625rem;
+  position: relative;
+  padding-left: 0.5625rem;
+}
+.dash_list > li:before {
+  display: block;
+  content: "-";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dash_list > li:last-of-type {
+  margin-bottom: 0;
+}
+
+/* 공통 popup */
+.popup_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 17.5rem;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.popup_tb_w {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  opacity: 0;
+  transition: 0.4s;
+  z-index: 5;
+}
+
+.popup_tb {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.popup_td {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 1.5625rem;
+}
+
+.bg_dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.popup_box {
+  background: #fff;
+  border-radius: 1.1875rem;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  padding: 1.25rem 1.125rem;
+}
+
+.popup_wrap.active {
+  display: flex;
+}
+
+.popup_wrap.active.motion .popup_tb_w {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup_wrap.active.motion .bg_dim {
+  opacity: 0.2;
+}
+
+.popup_ico_warn {
+  width: 3.1875rem;
+  height: 3.520625rem;
+  margin: 0 auto 1.375rem;
+  background: url("../images/ico_warn.png") no-repeat 50% 50%/100% auto;
+}
+
+.popup_main_copy {
+  font-size: 1.125rem;
+  color: #1e1e1e;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.popup_sub_copy {
+  margin-top: 0.9375rem;
+  font-size: 0.875rem;
+  color: #838287;
+  font-weight: 500;
+}
+
+.btn_popup_submit_group {
+  margin: 1.625rem -0.1875rem -0.1875rem;
+  display: flex;
+}
+
+.btn_popup_submit {
+  color: #323232;
+  line-height: 0;
+  font-size: 0;
+  background: #f4f0f0;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.3125rem;
+  border-radius: 0.5625rem;
+  margin: 0.1875rem;
+  box-sizing: border-box;
+  padding: 0.9375rem;
+}
+.btn_popup_submit.primary {
+  background: #ab0033;
+  color: #fff;
+}
+
+.btn_popup_submit_in {
+  display: inline-block;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 1.125rem;
 }
 /*# sourceMappingURL=style.css.map */
