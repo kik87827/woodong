@@ -10,12 +10,17 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .page_wrap{position:relative;}
 .header_wrap{background:#fff;height:rem(66.66);border-radius:0 0 rem(16) rem(16);box-sizing: border-box;padding:rem(12) rem(16) 0;display:flex;justify-content: space-between;align-items: center;
-    position:relative;z-index:30;
+    position:relative;z-index:30;overflow:hidden;
     box-shadow: 1px 6px 23px -4px rgba(0,0,0,0.1);
     -webkit-box-shadow: 1px 6px 23px -4px rgba(0,0,0,0.1);
     -moz-box-shadow: 1px 6px 23px -4px rgba(0,0,0,0.1);
+    &.type2{padding:rem(19) rem(16);height:rem(44);box-sizing: content-box;}
+    &.type3{
+        display:block;height:auto;padding-top:rem(27);
+    }
 }
-.header_main{}
+.header_inwrap{display:flex;justify-content: space-between;align-items: center;}
+.header_main{flex:1;}
 .header_title{}
 .header_title[class*="ico_"]{
     display:inline-flex;align-items:center;
@@ -23,9 +28,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .header_ico_text{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;position:relative;top:-1px;color:#3b3b3b;}
 
-.header_title_group{display:flex;align-items: center;
-
-}
+.header_title_group{display:flex;align-items: center;}
 .btn_history_back{display:block;width:rem(24);height:rem(24);background:url("../images/btn_history_back.png") no-repeat 50% 50%/rem(6.7) rem(11.33);flex:0 0 rem(24);margin-right:rem(9)}
 .header_sub_title{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;color:#3b3b3b;}
 
@@ -46,6 +49,23 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     &.ico_like{background-position: 0 rem(-66);}
     &.ico_share{background-position: 0 rem(-88);}
 }
+
+.header_row_wrap{border-top:1px solid #d7d7d7;margin:rem(18) rem(-16) 0;}
+.header_tab_list{
+    display:flex;align-items:center;justify-content:center;
+    > li {
+        flex:1;min-width:0;position:relative;
+        &.active{
+            .header_tab{
+                border-bottom-color:#ab0033;
+                .header_tab_intext{color:#ab0033;}
+            }
+        }
+    }
+}
+.header_tab{display:flex;align-items:center;justify-content:center;text-align: center;padding:rem(13);border-bottom:rem(4) solid transparent;font-size:0;line-height:0;box-sizing: border-box;min-height:rem(47);}
+.header_tab_intext{display:inline-block;color:#a8a8a8;font-weight:500;line-height:1;font-size:rem(16);}
+
 .middle_wrap{padding:0 rem(16) rem(66.66);box-sizing: border-box;
     &.type2{padding-left:0;padding-right:0;}
 }
