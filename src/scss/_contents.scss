@@ -189,7 +189,7 @@ input.input_search{flex:1;min-width:0;background:none;height:rem(44);line-height
 .result_item{display:block;font-size:rem(14);color:#323232;padding:rem(17) rem(17) rem(17) 0;}
 .mid_vbox_wrap{}
 .mid_vbox{
-    border-bottom:rem(6) solid #f3f3f3;padding:rem(20) rem(16);
+    border-bottom:rem(6) solid #f3f3f3;padding:rem(20) rem(16);display:block;
     // &:last-of-type{
     //     border-bottom:0;
     // }
@@ -211,6 +211,38 @@ input.input_search{flex:1;min-width:0;background:none;height:rem(44);line-height
     position:relative;border-radius:rem(7);width:rem(48);height:rem(39);display:block;overflow:hidden;
     &:last-of-type{}
 }
+.get_main_writing{}
+.writing_title{font-size:rem(17);font-weight:500;color:#323232;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;line-height:1.3;position:relative;box-sizing:border-box;}
+.writing_else_wrap{display:flex;align-items: center;justify-content: space-between;margin-top:rem(10);}
+.writing_else{
+    display:inline-block;font-size:rem(13);color:#8d8d8d;font-weight:500;line-height:1;
+    &.type2{font-size:rem(11);font-weight:400;}
+}
+.get_sub_writing{display:flex;margin-top:rem(16);}
+.writing_tail_spec{flex:1;min-width:0;}
+.writing_tail_list{
+    > li{
+        margin-bottom:rem(14);
+        &:last-of-type{margin-bottom:0;}
+    }
+}
+.wtail_item{
+    display:flex;align-items:center;
+    &:before{display:block;content:'';width:rem(24);height:rem(24);flex:0 0 rem(24);margin-right:rem(5);background:url("../images/ico_text_tail.png") no-repeat 0 0/100% auto;}
+    &.ico_01:before{background-position:0 0;}
+    &.ico_02:before{background-position:0 50%;}
+    &.ico_03:before{background-position:0 100%;}
+    &.type2{
+        .wtail_text{font-weight:700;font-size:rem(16);}
+    }
+}
+.wtail_text{display:inline-block;color:#323232;font-size:rem(15);}
+.writing_tail_img{
+    position:relative;flex:0 0 rem(133);width:rem(133);height:rem(100);border-radius:rem(14);overflow:hidden;margin-left:rem(20);
+    box-shadow: 0px 2px 13.76px 2.24px rgba(25, 25, 25, 0.06);
+    > img{}
+}
+
 
 /* 공통 popup */
 .popup_wrap{position:fixed;top:0;left:0;width:100%;height:100%;z-index:100000;display:none;align-items: center;justify-content: center;min-width:rem(280);overflow:hidden;flex-wrap:wrap;}
