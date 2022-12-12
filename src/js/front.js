@@ -413,10 +413,8 @@ function toggleDataFunc(){
 
 
 function toggleItem(target){
-  console.log(target);
   const targetItem = target !== undefined ? document.querySelectorAll(target) : null; 
   if(targetItem.length>0){
-    console.log(targetItem);
     targetItem.forEach((element)=>{
       element.addEventListener("click",(e)=>{
         e.preventDefault();
@@ -424,6 +422,30 @@ function toggleItem(target){
         thisEventObj.classList.toggle("active");
       });
     })
+  }
+}
+
+
+function activeToggle(target){
+  const targetItem = target !== undefined ? document.querySelectorAll(target) : null; 
+  if(targetItem.length>0){
+    targetItem.forEach((element)=>{
+      element.addEventListener("click",(e)=>{
+        e.preventDefault();
+        let thisEventObj = e.currentTarget;
+        let thisEventObjSiblings = siblings(thisEventObj);
+        thisEventObjSiblings.forEach((element)=>{
+          element.classList.remove("active");
+        })
+        thisEventObj.classList.toggle("active");
+      });
+    });
+    document.addEventListener("click",(e)=>{
+      if(e.target.classList.contains("btn_box_more")){return;}
+      targetItem.forEach((element)=>{
+        element.classList.remove("active");
+      });
+    });
   }
 }
 
@@ -436,5 +458,18 @@ function dataPicker(){
         changeYear: true,
         dateFormat: 'yy-mm-dd'
       });
+  });
+}
+
+function siblings(t) {
+  var children = t.parentElement.children;
+  var tempArr = [];
+
+  for (var i = 0; i < children.length; i++) {
+      tempArr.push(children[i]);
+  }
+
+  return tempArr.filter(function(e){
+      return e != t;
   });
 }

@@ -25,11 +25,17 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .header_title{}
 .header_title[class*="ico_"]{
     display:inline-flex;align-items:center;
-    &:before{display:block;flex:0 0 17.33px;margin-right:rem(8);content:'';width:17.33px;height:19px;background:url("../images/map_bullet.png") no-repeat 0 0/100% auto;}
+    &:before{display:block;flex:0 0 rem(17.33);margin-right:rem(8);content:'';width:rem(17.33);height:rem(19);background:url("../images/map_bullet.png") no-repeat 0 0/100% auto;}
 }
 .header_ico_text{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;position:relative;top:-1px;color:#3b3b3b;}
 
-.header_title_group{display:flex;align-items: center;}
+.header_title_group{
+    display:flex;align-items: center;
+    &.type2{justify-content: center;
+        .header_sub_title{flex:1;min-width:0;padding-right:rem(40.5);text-align: center;}
+    }
+}
+.btn_history_delback{display:block;width:rem(10.5);height:rem(10.5);background:url("../images/ico_page_delback.png") no-repeat 50% 50%/rem(10.5) auto;flex:0 0 rem(10.5);margin:0 rem(10)}
 .btn_history_back{display:block;width:rem(24);height:rem(24);background:url("../images/btn_history_back.png") no-repeat 50% 50%/rem(6.7) rem(11.33);flex:0 0 rem(24);margin-right:rem(9)}
 .header_sub_title{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;color:#3b3b3b;}
 .header_title_ico{display:inline-block;width:rem(19.33);height:rem(20.33);background:url("../images/docu_bullet.png") no-repeat 0 0/100% auto;margin-right:rem(8);}
@@ -78,8 +84,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .bottom_layer_wrap{
     display:block;position:fixed;bottom:0;width:0;width:100%;background:#fff;z-index:50;
     box-shadow: 1px -4px 23px -4px rgba(0,0,0,0.09);
-    -webkit-box-shadow: 1px -4px 23px -4px rgba(0,0,0,0.09);
-    -moz-box-shadow: 1px -4px 23px -4px rgba(0,0,0,0.09);
+    &.type2{box-shadow:none;background:none;}
 }
 .bottom_menu_list{
     display:flex;
