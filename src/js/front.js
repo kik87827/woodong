@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   commonEvent();
   commonForm();
   bottomLayer();
+  dataPicker();
 });
 window.addEventListener("load", function() {});
 
@@ -410,3 +411,30 @@ function toggleDataFunc(){
   });
 }
 
+
+function toggleItem(target){
+  console.log(target);
+  const targetItem = target !== undefined ? document.querySelectorAll(target) : null; 
+  if(targetItem.length>0){
+    console.log(targetItem);
+    targetItem.forEach((element)=>{
+      element.addEventListener("click",(e)=>{
+        e.preventDefault();
+        let thisEventObj = e.currentTarget;
+        thisEventObj.classList.toggle("active");
+      });
+    })
+  }
+}
+
+function dataPicker(){
+  $(function(){
+    $(".define_calendar").datepicker({
+        monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+        dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd'
+      });
+  });
+}

@@ -152,27 +152,27 @@ textarea {
 }
 
 ::-webkit-input-placeholder {
-  color: #808080;
+  color: #bdbdbd;
   font-family: "Noto Sans KR";
 }
 
 ::-moz-input-placeholder {
-  color: #808080;
+  color: #bdbdbd;
   font-family: "Noto Sans KR";
 }
 
 :-ms-input-placeholder {
-  color: #808080;
+  color: #bdbdbd;
   font-family: "Noto Sans KR";
 }
 
 ::-ms-input-placeholder {
-  color: #808080;
+  color: #bdbdbd;
   font-family: "Noto Sans KR";
 }
 
 ::input-placeholder {
-  color: #808080;
+  color: #bdbdbd;
   font-family: "Noto Sans KR";
 }
 
@@ -1004,7 +1004,11 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 30;
   overflow: hidden;
   box-shadow: 1px 6px 23px -4px rgba(0, 0, 0, 0.1);
@@ -1014,7 +1018,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .header_wrap.type2 {
   padding: 1.1875rem 1rem;
   height: 2.75rem;
-  box-sizing: content-box;
+  height: auto;
 }
 .header_wrap.type3 {
   display: block;
@@ -1076,6 +1080,14 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   line-height: 1;
   font-weight: 700;
   color: #3b3b3b;
+}
+
+.header_title_ico {
+  display: inline-block;
+  width: 1.208125rem;
+  height: 1.270625rem;
+  background: url("../images/docu_bullet.png") no-repeat 0 0/100% auto;
+  margin-right: 0.5rem;
 }
 
 .head_menu_list {
@@ -1352,8 +1364,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .ui-datepicker {
   width: 280px;
-  z-index: 10000 !important;
+  z-index: 20 !important;
   display: none;
+  font-size: 0.875rem;
 }
 
 .ui-datepicker .ui-datepicker-header {
@@ -1364,7 +1377,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
   position: absolute;
-  top: 10px;
+  top: 12px;
   width: 22px;
   height: 22px;
 }
@@ -1414,7 +1427,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   width: 173px;
   text-align: center;
   font-size: 17px;
-  font-family: "nsr";
+  font-family: "Noto Sans KR";
 }
 
 .ui-datepicker .ui-datepicker-title:after {
@@ -1424,7 +1437,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 
 .ui-datepicker .ui-datepicker-title select {
-  font-size: 12px;
+  font-size: 14px;
   margin: 1px 0;
 }
 
@@ -1437,7 +1450,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .ui-datepicker table {
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   border-collapse: collapse;
   margin: 0 0 0.4em;
 }
@@ -1565,7 +1578,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 /* Component containers
 ----------------------------------*/
 .ui-widget {
-  font-family: "Noto Sans Korean";
+  font-family: "Noto Sans KR";
   font-size: 1em;
 }
 
@@ -1577,7 +1590,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-  font-family: "Noto Sans Korean";
+  font-family: "Noto Sans KR";
   font-size: 1em;
 }
 
@@ -1608,9 +1621,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  font-family: "Noto Sans Korean";
+  font-family: "Noto Sans KR";
   color: #363636;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .ui-state-default a,
@@ -1642,10 +1655,6 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   text-decoration: none;
 }
 
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
-  outline: 1px dashed #000;
-}
-
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
@@ -1671,14 +1680,14 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  background: #404374;
+  background: #bc335c;
   color: #fff;
   border-radius: 100%;
   min-width: 8px;
   text-align: center;
   padding: 0;
   height: 32px;
-  line-height: 34px;
+  line-height: 31px;
   width: 32px;
   margin: 0 auto;
 }
@@ -1741,37 +1750,6 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .ui-icon {
   width: 16px;
   height: 16px;
-}
-
-.ui-icon,
-.ui-widget-content .ui-icon {
-  background-image: url("../images/jqueryui/ui-icons_444444_256x240.png");
-}
-
-.ui-widget-header .ui-icon {
-  background-image: url("../images/jqueryui/ui-icons_444444_256x240.png");
-}
-
-.ui-state-default .ui-icon {
-  background-image: url("../images/jqueryui/ui-icons_777777_256x240.png");
-}
-
-.ui-state-hover .ui-icon,
-.ui-state-focus .ui-icon {
-  background-image: url("../images/jqueryui/ui-icons_555555_256x240.png");
-}
-
-.ui-state-active .ui-icon {
-  background-image: url("../images/jqueryui/ui-icons_ffffff_256x240.png");
-}
-
-.ui-state-highlight .ui-icon {
-  background-image: url("../images/jqueryui/ui-icons_777620_256x240.png");
-}
-
-.ui-state-error .ui-icon,
-.ui-state-error-text .ui-icon {
-  background-image: url("../images/jqueryui/ui-icons_cc0000_256x240.png");
 }
 
 /* positioning */
@@ -2539,10 +2517,10 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 
 .ui-datepicker-title select {
-  font-family: "Malgun Gothic", "맑은 고딕", "malgunweb";
+  font-family: "Noto Sans KR";
   color: #333;
-  padding: 0 35px 2px 5px;
-  height: 23px;
+  padding: 0 20px 2px 5px;
+  height: 26px;
   box-sizing: border-box;
   min-width: 80px;
   border: 1px solid #bbbbbb;
@@ -2558,9 +2536,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 @media (max-width: 1023px) {
   .ui-datepicker {
-    width: calc(100% - 40px) !important;
+    width: calc(100% - 44px) !important;
     box-sizing: border-box;
-    left: 20px !important;
+    left: 22px !important;
   }
 }
 .logo_loading {
@@ -2969,6 +2947,7 @@ input.input_search::input-placeholder {
   position: relative;
   border-radius: 0.875rem;
   overflow: hidden;
+  background: #d7d7d7;
   flex: 0 0 6.6875rem;
   height: 6.6875rem;
 }
@@ -2995,15 +2974,50 @@ input.input_search::input-placeholder {
   margin-left: 0.875rem;
   padding-top: 0.25rem;
 }
+.thum_data_spec_g.type2 {
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.thum_data_spec_g.type2 .data_count_list {
+  margin-top: 1.5625rem;
+}
 
 .data_spec_main {
   display: flex;
+  align-items: center;
 }
 .data_spec_main .badge {
   position: relative;
   top: -1px;
   flex: 0 0 1.4375rem;
   margin-left: 0.625rem;
+}
+.data_spec_main.type2 .spec_main_para {
+  flex: 1;
+  min-width: 0;
+}
+.data_spec_main.type2 .ico_like {
+  flex: 0 0 1.1875rem;
+  margin-left: 0.625rem;
+}
+
+.ico_like {
+  display: inline-block;
+  width: 1.1875rem;
+  height: 1.0625rem;
+  background: url("../images/ico_like.png") no-repeat 0 0/100% auto;
+}
+.ico_like.active {
+  background-position: 0 100%;
+}
+
+.data_spec_else {
+  font-size: 0.6875rem;
+  font-family: "Montserrat Regular";
+  color: #a8a8a8;
+  margin-top: 0.5625rem;
 }
 
 .spec_main_para {
@@ -3059,6 +3073,9 @@ input.input_search::input-placeholder {
   margin-top: 0.8125rem;
   font-size: 0;
   line-height: 0;
+}
+.data_count_list.type2 {
+  margin-top: 1rem;
 }
 .data_count_list > li {
   margin-right: 0.5625rem;
@@ -3291,6 +3308,271 @@ input.input_search::input-placeholder {
   margin-left: 1.25rem;
   box-shadow: 0px 2px 13.76px 2.24px rgba(25, 25, 25, 0.06);
 }
+.btn_submitbox {
+  display: inline-block;
+  font-size: 0.8125rem;
+  color: #ab0033;
+  line-height: 1;
+  background: #fdf0f2;
+  border-radius: 6.25rem;
+  padding: 0.4375rem 0.9375rem;
+  font-weight: 500;
+}
+
+/* form */
+.form_table_wrap {
+  padding: 1.875rem 0.375rem 0;
+}
+
+.form_table > li {
+  margin-bottom: 1.25rem;
+}
+.form_table > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.form_label_row {
+  margin-bottom: 0.625rem;
+  font-size: 0;
+  line-height: 0;
+}
+
+.form_label {
+  font-size: 0.875rem;
+  color: #323232;
+  line-height: 1;
+  font-weight: 500;
+  display: inline-block;
+}
+.form_label.imp:after {
+  display: inline-block;
+  color: #ab0033;
+  content: "*";
+  margin-left: 0.3125rem;
+}
+
+.form_content_row {
+  line-height: 0;
+  font-size: 0;
+}
+
+input.form_input {
+  border: 1px solid #d8d8d8;
+  font-family: "Noto Sans KR";
+  padding: 0 0.875rem;
+  color: #323232;
+  border-radius: 0.5rem;
+  height: 2.75rem;
+  line-height: 1;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 0.875rem;
+}
+input.form_input.define_calendar {
+  background: #fff url("../images/ico_calendar.png") no-repeat 100% 50%/2rem auto;
+  padding-right: 2.75rem;
+}
+
+select.form_select {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  height: 2.75rem;
+  color: #323232;
+  padding: 0 3.125rem 0 0.875rem;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR";
+  border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  background: #fff url("../images/ico_select.png") no-repeat 100% 50%/2.3125rem auto;
+  line-height: 2.625rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+select.form_select::-ms-value {
+  background: none;
+  color: #323232;
+}
+select.form_select::-ms-expand {
+  display: none;
+}
+select.form_select::-ms-value {
+  background: none;
+  color: #323232;
+}
+select.form_select.ready {
+  color: #999;
+}
+select.form_select:disabled {
+  background-color: #f7f7f7;
+  color: #999999;
+  opacity: 1;
+}
+
+textarea.form_ta {
+  font-family: "Noto Sans KR";
+  width: 100%;
+  height: 6.25rem;
+  resize: none;
+  padding: 0.875rem;
+  border: 1px solid #d8d8d8;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+}
+
+.inline_form {
+  display: flex;
+  align-items: center;
+  margin: 0 -0.40625rem;
+}
+
+.inline_cols {
+  flex: 1;
+  margin: 0 0.40625rem;
+}
+
+.inline_sub {
+  margin-top: 0.625rem;
+}
+
+.props_formitem {
+  display: inline-flex;
+  font-size: 0;
+  line-height: 0;
+}
+
+input.props_form {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  vertical-align: middle;
+  background: url("../images/ico_formcheck.png") no-repeat 0 0/100% auto;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 100%;
+  flex: 0 0 0.9375rem;
+  border: 1px solid #a8a8a8;
+  border-radius: 100%;
+}
+input.props_form:checked {
+  background-position: 0 100%;
+  border-color: #ab0033;
+}
+
+.props_label {
+  display: inline-block;
+  position: relative;
+  margin-left: 0.375rem;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  color: #a8a8a8;
+  line-height: 1;
+  display: inline-block;
+  min-height: 1.0625rem;
+  box-sizing: border-box;
+  padding-top: 0.0625rem;
+}
+
+input.props_form:checked + .props_label {
+  color: #ab0033;
+}
+
+.photo_upload_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -0.625rem;
+}
+.photo_upload_wrap > * {
+  margin: 0.625rem 0.625rem 0 0;
+}
+
+.photo_upload_form {
+  flex: 0 0 5.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 0.875rem;
+  background: #f5f5f5;
+  border: 1px solid #d8d8d8;
+  box-sizing: border-box;
+}
+
+.photo_upload_inner:before {
+  display: block;
+  content: "";
+  width: 1.75rem;
+  height: 1.520625rem;
+  background: url("../images/ico_photo.png") no-repeat 0 0/100% auto;
+  margin: 0 auto;
+}
+
+.upload_count_wrap {
+  margin-top: 0.625rem;
+  font-size: 0.6875rem;
+  color: #323232;
+  text-align: center;
+  line-height: 1;
+  font-family: "Montserrat Medium";
+  text-align: center;
+}
+
+.upload_count_current,
+.upload_count_part,
+.upload_count_length {
+  line-height: 1;
+  font-size: 0.6875rem;
+  display: inline-block;
+}
+
+input.upload_file {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.upload_data {
+  position: relative;
+}
+
+.upload_data_img_wrap {
+  position: relative;
+  overflow: hidden;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 0.875rem;
+  background: #d7d7d7;
+  box-sizing: border-box;
+}
+.btn_upload_delete {
+  display: inline-block;
+  position: absolute;
+  top: 0.5625rem;
+  right: 0.5625rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background: url("../images/ico_upload_del.png") no-repeat 50% 50%/100% auto;
+}
+
 /* 공통 popup */
 .popup_wrap {
   position: fixed;

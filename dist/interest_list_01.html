@@ -18,17 +18,70 @@
 <body class="front_body">
 	<form>
 		<div class="page_wrap">
-			<header class="header_wrap">
-				<div class="header_main">
-					<div class="header_title_group">
-						<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
-						<h1 class="header_sub_title">타이틀</h1>
+			<header class="header_wrap type3">
+				<div class="header_inwrap">
+					<div class="header_main">
+						<div class="header_title_group">
+							<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
+							<h1 class="header_sub_title">관심목록</h1>
+						</div>
 					</div>
+				</div>
+				<div class="header_row_wrap">
+					<ul class="header_tab_list">
+						<li class="active"><a href="javascript:;" class="header_tab"><span class="header_tab_intext">학원</span></a></li>
+						<li><a href="javascript:;" class="header_tab"><span class="header_tab_intext">게시판</span></a></li>
+					</ul>
 				</div>
 			</header>
 			<section class="middle_wrap">
-				내용이 들어갑니다.
+				<ul class="thum_data_list">
+					<li>
+						<div class="thum_data_item">
+							<a href="#" class="thum_data_img"><img src="./assets/images/temp_thum_320x320.png" class="data_img" alt=""><span class="mark_label">특강</span></a>
+							<div class="thum_data_spec_g">
+								<div class="data_spec_main type2">
+									<a href="#" class="spec_main_para">야나두 영어학원</a>
+									<a href="#" class="ico_like"><span class="hdtext">좋아요</span></a>
+								</div>
+								<a href="#" class="data_spec_else_wrap">
+									<p class="data_spec_main_guide">충청남도 세종시 ㅇㅇ동 ㅇㅇ로</p>
+									<p class="data_spec_else">2022-07-15</p>
+									<ul class="data_count_list">
+										<li><span class="data_count_item ico_01"><span class="data_count_text">30</span></span></li>
+										<li><span class="data_count_item ico_02"><span class="data_count_text">12</span></span></li>
+										<li><span class="data_count_item ico_03"><span class="data_count_text">33</span></span></li>
+									</ul>
+								</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="thum_data_item">
+							<a href="#" class="thum_data_img"><img src="./assets/images/temp_thum_320x320_2.png" class="data_img" alt=""><span class="mark_label type2">설명회</span></a>
+							<div class="thum_data_spec_g">
+								<div class="data_spec_main type2">
+									<a href="#" class="spec_main_para">세종 청솔학원</a>
+									<a href="#" class="ico_like"><span class="hdtext">좋아요</span></a>
+								</div>
+								<a href="#" class="data_spec_else_wrap">
+									<p class="data_spec_main_guide">충청남도 세종시 ㅇㅇ동 ㅇㅇ로</p>
+									<p class="data_spec_else">2022-07-15</p>
+									<ul class="data_count_list">
+										<li><span class="data_count_item ico_01"><span class="data_count_text">30</span></span></li>
+										<li><span class="data_count_item ico_02"><span class="data_count_text">12</span></span></li>
+										<li><span class="data_count_item ico_03"><span class="data_count_text">33</span></span></li>
+									</ul>
+								</a>
+							</div>
+						</div>
+					</li>
+					<!-- <li class="nodata_li"><p class="nodata_para">데이터가 없습니다.</p></li> -->
+				</ul>
 			</section>
+			<script>
+				toggleItem(".ico_like");
+			</script>
 		</div>
 	</form>
 </body>
