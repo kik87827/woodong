@@ -3748,6 +3748,83 @@ input.upload_file {
   background: url("../images/ico_upload_del.png") no-repeat 50% 50%/100% auto;
 }
 
+.vitem_both {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.375rem;
+}
+
+.vitem_in_main {
+  font-size: 1rem;
+  color: #323232;
+  font-weight: 500;
+}
+
+.vitem_in_sub {
+  font-size: 0.8125rem;
+  color: #8d8d8d;
+  margin-top: 0.125rem;
+}
+
+.text_obj_list {
+  font-size: 0;
+  line-height: 0;
+  margin: -0.625rem 0;
+  padding: 0 0.375rem;
+}
+.text_obj {
+  padding: 0.625rem 0;
+  display: inline-block;
+  font-size: 1rem;
+  color: #323232;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.control_props_item {
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+.control_props_label {
+  background: #ab0033;
+  border-radius: 6.25rem;
+  position: relative;
+  display: inline-block;
+  width: 2.91625rem;
+  height: 1.66625rem;
+  border-radius: 6.25rem;
+}
+.control_props_label:after {
+  display: block;
+  content: "";
+  transition: 0.3s;
+  background: #fff;
+  width: 1.020625rem;
+  height: 1.020625rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0.35375rem;
+  transform: translateY(-50%);
+}
+
+input.control_props {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border: 0;
+}
+
+input.control_props:checked + .control_props_label:after {
+  left: 1.5rem;
+}
+
 /* 공통 popup */
 .popup_wrap {
   position: fixed;
