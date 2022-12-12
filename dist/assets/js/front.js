@@ -33,7 +33,7 @@ function commonInit() {
 }
 
 function commonEvent() {
-  const page_wrap2 = document.querySelector(".page_wrap.layout_type2");
+  const page_wrap2 = document.querySelector(".page_wrap.full_height");
   let windowWidth = 0;
   window.addEventListener("resize", () => {
     if (windowWidth === window.innerWidth) {
