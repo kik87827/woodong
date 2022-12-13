@@ -1077,14 +1077,21 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   padding-right: 2.53125rem;
   text-align: center;
 }
+.header_title_group.type3 {
+  justify-content: center;
+}
+.header_title_group.type3 .header_sub_title {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
 
 .btn_history_delback {
   display: block;
-  width: 0.65625rem;
-  height: 0.65625rem;
+  width: 1.375rem;
+  height: 1.375rem;
   background: url("../images/ico_page_delback.png") no-repeat 50% 50%/0.65625rem auto;
-  flex: 0 0 0.65625rem;
-  margin: 0 0.625rem;
+  flex: 0 0 1.375rem;
 }
 
 .btn_history_back {
@@ -1110,6 +1117,20 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   height: 1.270625rem;
   background: url("../images/docu_bullet.png") no-repeat 0 0/100% auto;
   margin-right: 0.5rem;
+}
+
+.header_else_layer {
+  position: absolute;
+  top: 1.8125rem;
+}
+.header_else_layer .head_menu_list {
+  margin: 0;
+}
+.header_else_layer.pos_left {
+  left: 1rem;
+}
+.header_else_layer.pos_right {
+  right: 1rem;
 }
 
 .head_menu_list {
@@ -1145,6 +1166,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 .head_menu.ico_share {
   background-position: 0 -5.5rem;
+}
+.head_menu.ico_setting {
+  background-position: 0 100%;
 }
 
 .header_row_wrap {

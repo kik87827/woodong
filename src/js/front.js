@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   commonForm();
   bottomLayer();
   dataPicker();
+  commonTitle();
 });
 window.addEventListener("load", function() {});
 
@@ -472,4 +473,18 @@ function siblings(t) {
   return tempArr.filter(function(e){
       return e != t;
   });
+}
+
+
+function commonTitle(){
+  const headerTitle = document.querySelector(".header_sub_title.has_pd");
+  const pos_left = document.querySelector(".header_else_layer.pos_left");
+  const pos_right = document.querySelector(".header_else_layer.pos_right");
+  let pos_left_wid = pos_left !== null ? pos_left.getBoundingClientRect().width : 0;
+  let pos_right_wid = pos_right !== null ? pos_right.getBoundingClientRect().width : 0;
+  let max_wid = Math.max.apply(null,[pos_left_wid,pos_right_wid]);
+  if(headerTitle !== null){
+    headerTitle.style.paddingLeft = max_wid + "px";
+    headerTitle.style.paddingRight = max_wid + "px";
+  }
 }
