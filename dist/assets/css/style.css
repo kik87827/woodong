@@ -4613,6 +4613,10 @@ input.control_props:checked + .control_props_label:after {
 .get_else_group {
   margin-top: 0.1875rem;
 }
+.get_else_group.type2 {
+  border-top: 1px solid #d7d7d7;
+  margin-top: 1.25rem;
+}
 
 .get_else_row {
   display: flex;

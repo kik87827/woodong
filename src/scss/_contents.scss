@@ -649,6 +649,9 @@ input.control_props:checked + .control_props_label:after{left:rem(24)}
 }
 .get_else_group{
     margin-top:rem(3);
+    &.type2{
+        border-top:1px solid #d7d7d7;margin-top:rem(20);
+    }
 }
 .get_else_row{display:flex;justify-content: space-between;align-items: center;font-size:0;line-height:0;padding:rem(14.66) 0;border-bottom:1px solid #d7d7d7;
     &:last-of-type{border-bottom:0;padding-bottom:0;}
