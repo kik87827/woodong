@@ -2796,6 +2796,9 @@ img.data_img {
 .vertical_box.type2 {
   padding: 1.75rem 1.6875rem;
 }
+.vertical_box.type3 {
+  padding: 1.75rem 1rem;
+}
 .vertical_box:last-of-type {
   border-bottom: 0;
 }
@@ -2806,12 +2809,12 @@ img.data_img {
 .profile_item {
   display: flex;
   align-items: center;
+  padding-left: 0.625rem;
+  margin-right: 0.625rem;
 }
 .profile_item.has_ico {
   padding-right: 1.875rem;
   position: relative;
-  padding-left: 0.625rem;
-  margin-right: 0.625rem;
 }
 .profile_item.has_ico:after {
   display: block;
@@ -4095,6 +4098,10 @@ input.control_props:checked + .control_props_label:after {
   background: #d7d7d7;
   height: 1px;
   margin: 1.125rem 0;
+}
+
+.hor_boxmenu_list_wrap {
+  margin: 1.25rem 0 0.1875rem;
 }
 
 .hor_boxmenu_list {
