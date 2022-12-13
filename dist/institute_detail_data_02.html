@@ -15,20 +15,43 @@
 	<title></title>
 </head>
 
-<body class="front_body">
+<body class="front_body touchDis2">
 	<form>
 		<div class="page_wrap">
 			<header class="header_wrap">
-				<div class="header_main">
-					<div class="header_title_group">
-						<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
-						<h1 class="header_sub_title">타이틀</h1>
+				<div class="header_inwrap">
+					<div class="header_main">
+						<div class="header_title_group">
+							<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
+							<h1 class="header_sub_title">학원위치</h1>
+						</div>
 					</div>
 				</div>
 			</header>
-			<section class="middle_wrap">
-				내용이 들어갑니다.
+			<section class="middle_wrap type2">
+				<div class="head_insert">
+					<!-- api -->
+					<div id="api_wrap" style="background:#f0efeb;display:flex;align-items:center;justify-content:center;height:100vh;color:#000;font-size:16px">
+						api(지도)
+					</div>
+					<!-- // api -->
+				</div>
 			</section>
+			<script>
+				// api height
+
+				var header_wrap = document.querySelector(".header_wrap");
+				var api_wrap = document.querySelector("#api_wrap");
+
+				function apiHeight() {
+					api_wrap.style.height = `${(window.innerHeight - header_wrap.getBoundingClientRect().height)+16}px`;
+				}
+
+				apiHeight();
+				window.addEventListener("resize", () => {
+					apiHeight();
+				});
+			</script>
 		</div>
 	</form>
 </body>

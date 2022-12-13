@@ -302,6 +302,8 @@ function commonForm() {
 
 function bottomLayer() {
   const bottom_layer = document.querySelector(".bottom_layer_wrap");
+  const bottom_quickitem_list = document.querySelector(".bottom_quickitem_list");
+  const bottom_quickitem_list_height = bottom_quickitem_list !== null ? bottom_quickitem_list.getBoundingClientRect().height : 0;
   const page_wrap = document.querySelector(".page_wrap");
   const middle_wrap = document.querySelector(".middle_wrap");
 
@@ -313,53 +315,16 @@ function bottomLayer() {
   function action() {
     if (bottom_layer !== null) {
       if (page_wrap.classList.contains("flex_layout")) {
-        middle_wrap.style.paddingBottom = `${bottom_layer.getBoundingClientRect().height}px`;
+        middle_wrap.style.paddingBottom = `${bottom_layer.getBoundingClientRect().height + bottom_quickitem_list_height}px`;
       } else {
-        page_wrap.style.paddingBottom = `${bottom_layer.getBoundingClientRect().height}px`;
+        page_wrap.style.paddingBottom = `${bottom_layer.getBoundingClientRect().height + bottom_quickitem_list_height}px`;
       }
     }
   }
 }
 
 
-function bannerSwiperFunc(target) {
-  var mid_banner_target = document.querySelector(target);
-  var mid_banner_slide = document.querySelectorAll(`${target} .swiper-slide`);
-  console.log(target);
-  var count_length = mid_banner_target.querySelector(".count_length");
-  var count_current = mid_banner_target.querySelector(".count_current");
-  var mid_banner_swiper = null;
-  count_length.innerHTML = mid_banner_slide.length;
-  if (mid_banner_slide.length) {
-    mid_banner_swiper = new Swiper(`${target} .banner-container`, {
-      speed: 800,
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      }
-    });
-    mid_banner_swiper.on("slideChange", () => {
-      count_current.innerHTML = mid_banner_swiper.realIndex + 1;
-    });
-  }
-}
 
-function orderSwiperFunc(target) {
-  var order_target = document.querySelector(target);
-  var order_slide = document.querySelectorAll(`${target} .swiper-slide`);
-  var order_swiper = null;
-  if (order_slide.length) {
-    order_swiper = new Swiper(target, {
-      speed: 800,
-      loop: true,
-      pagination: {
-        clickable: true,
-        el: `${target} .swiper-pagination`,
-      }
-    });
-  }
-}
 
 function moreDataLayer() {
   const btn_data_more = document.querySelectorAll(".btn_data_more");
