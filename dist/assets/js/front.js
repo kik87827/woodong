@@ -394,6 +394,20 @@ function toggleItem(target) {
   }
 }
 
+function accordianItem(target) {
+  let getTarget = target;
+  const targetItem = getTarget !== undefined ? document.querySelectorAll(getTarget) : null;
+  targetItem.forEach((element) => {
+    let thisTarget = element;
+    let thisTargetBar = thisTarget.querySelector(".tbox_bar");
+    thisTargetBar.addEventListener("click", (e) => {
+      e.preventDefault();
+      let thisEventObj = e.currentTarget;
+      thisTarget.classList.toggle("active");
+    });
+  })
+}
+
 
 function activeToggle(target) {
   const targetItem = target !== undefined ? document.querySelectorAll(target) : null;

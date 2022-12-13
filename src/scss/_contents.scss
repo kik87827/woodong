@@ -605,3 +605,38 @@ input.control_props:checked + .control_props_label:after{left:rem(24)}
 @media(max-width:1023px){
     
 }
+
+/* toggle */
+.togglebox_list{
+    margin:rem(26.66) 0 0 0;
+    > li{
+        margin-bottom:rem(13.33);
+        &.nodata_li{
+            padding:rem(150) 0
+        }
+        &:last-of-type{margin-bottom:0;}
+    }
+}
+.togglebox{
+    background:#fff;border-radius:rem(16);
+    &.active{
+        .tbox_bar{
+            &:after{background-position:0 100%;}
+        }
+        .tbox_cont{display:block;}
+    }
+}
+.tbox_bar{
+    display:block;padding:rem(18.33) rem(51.33) rem(18.33) rem(21.33);position:relative;
+    &:after{display:block;content:'';width:rem(23.33);height:rem(23.33);border-radius:100%;position:absolute;top:50%;right:rem(21.33);transform: translateY(-50%);background:url("../images/ico_toggle.png") no-repeat 0 0/100% auto;}
+}
+.tbox_main_title{font-size:rem(15);color:#323232;font-weight:500;}
+.tbox_else_sub{margin-top:rem(7);font-size:rem(11);color:#a8a8a8;  font-family: 'Montserrat Medium';line-height:1;}
+
+.tbox_cont{padding:rem(19) 0;border-top:1px solid #d7d7d7;margin:0 rem(21.33);display:none;}
+.tbox_cont_para{font-size:rem(12.33);color:#323232;line-height:1.5;}
+.btn_tbox_row{
+    margin-top:rem(20);
+    .btn_card{}
+}
+.btn_card{display:inline-block;font-weight:500;color:#fff;font-size:rem(12.66);line-height:1;border-radius:rem(8);background:#ab0033;padding:rem(10.66) rem(16);}

@@ -20,7 +20,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
         display:block;height:auto;padding-top:rem(27);
     }
 }
-.header_inwrap{display:flex;justify-content: space-between;align-items: center;}
+.header_inwrap{display:flex;justify-content: space-between;align-items: center;position:relative;width:100%;}
 .header_main{flex:1;min-width:0;font-size:0;line-height:0;}
 .header_title{}
 .header_title[class*="ico_"]{
@@ -46,10 +46,11 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
 .header_else_wrap{
 }
-.header_else_layer{position:absolute;top:rem(29);
+.header_else_layer{
+    position:absolute;top:50%;transform:translateY(-50%);
     .head_menu_list{margin:0;}
-    &.pos_left{left:rem(16);}
-    &.pos_right{right:rem(16);}
+    &.pos_left{left:0;}
+    &.pos_right{right:0;}
 }
 .head_menu_list{
     display:flex;justify-content:flex-end;align-items:center;margin-right:rem(5);font-size:0;line-height:0;

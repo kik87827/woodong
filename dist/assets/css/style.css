@@ -1034,6 +1034,8 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  width: 100%;
 }
 
 .header_main {
@@ -1138,16 +1140,17 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .header_else_layer {
   position: absolute;
-  top: 1.8125rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .header_else_layer .head_menu_list {
   margin: 0;
 }
 .header_else_layer.pos_left {
-  left: 1rem;
+  left: 0;
 }
 .header_else_layer.pos_right {
-  right: 1rem;
+  right: 0;
 }
 
 .head_menu_list {
@@ -4477,5 +4480,89 @@ input.control_props:checked + .control_props_label:after {
   line-height: 1;
   font-weight: 500;
   font-size: 1.125rem;
+}
+
+/* toggle */
+.togglebox_list {
+  margin: 1.66625rem 0 0 0;
+}
+.togglebox_list > li {
+  margin-bottom: 0.833125rem;
+}
+.togglebox_list > li.nodata_li {
+  padding: 9.375rem 0;
+}
+.togglebox_list > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.togglebox {
+  background: #fff;
+  border-radius: 1rem;
+}
+.togglebox.active .tbox_bar:after {
+  background-position: 0 100%;
+}
+.togglebox.active .tbox_cont {
+  display: block;
+}
+
+.tbox_bar {
+  display: block;
+  padding: 1.145625rem 3.208125rem 1.145625rem 1.333125rem;
+  position: relative;
+}
+.tbox_bar:after {
+  display: block;
+  content: "";
+  width: 1.458125rem;
+  height: 1.458125rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  right: 1.333125rem;
+  transform: translateY(-50%);
+  background: url("../images/ico_toggle.png") no-repeat 0 0/100% auto;
+}
+
+.tbox_main_title {
+  font-size: 0.9375rem;
+  color: #323232;
+  font-weight: 500;
+}
+
+.tbox_else_sub {
+  margin-top: 0.4375rem;
+  font-size: 0.6875rem;
+  color: #a8a8a8;
+  font-family: "Montserrat Medium";
+  line-height: 1;
+}
+
+.tbox_cont {
+  padding: 1.1875rem 0;
+  border-top: 1px solid #d7d7d7;
+  margin: 0 1.333125rem;
+  display: none;
+}
+
+.tbox_cont_para {
+  font-size: 0.770625rem;
+  color: #323232;
+  line-height: 1.5;
+}
+
+.btn_tbox_row {
+  margin-top: 1.25rem;
+}
+.btn_card {
+  display: inline-block;
+  font-weight: 500;
+  color: #fff;
+  font-size: 0.79125rem;
+  line-height: 1;
+  border-radius: 0.5rem;
+  background: #ab0033;
+  padding: 0.66625rem 1rem;
 }
 /*# sourceMappingURL=style.css.map */
