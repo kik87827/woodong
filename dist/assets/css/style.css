@@ -1038,6 +1038,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .header_main {
   flex: 1;
+  min-width: 0;
+  font-size: 0;
+  line-height: 0;
 }
 
 .header_title[class*=ico_] {
@@ -1062,6 +1065,10 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   position: relative;
   top: -1px;
   color: #3b3b3b;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .header_title_group {
@@ -1109,6 +1116,10 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   line-height: 1;
   font-weight: 700;
   color: #3b3b3b;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .header_title_ico {
@@ -1138,6 +1149,8 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   justify-content: flex-end;
   align-items: center;
   margin-right: 0.3125rem;
+  font-size: 0;
+  line-height: 0;
 }
 .head_menu_list > li {
   margin-right: 1.25rem;
@@ -3093,13 +3106,13 @@ input.input_search::input-placeholder {
   margin-left: 0.625rem;
 }
 
-.ico_like {
+.ico_like_item {
   display: inline-block;
   width: 1.1875rem;
   height: 1.0625rem;
   background: url("../images/ico_like.png") no-repeat 0 0/100% auto;
 }
-.ico_like.active {
+.ico_like_item.active {
   background-position: 0 100%;
 }
 

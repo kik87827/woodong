@@ -172,7 +172,7 @@ input.input_search{flex:1;min-width:0;background:none;height:rem(44);line-height
         .ico_like{flex:0 0 rem(19);margin-left:rem(10);}
     }
 }
-.ico_like{
+.ico_like_item{
     display:inline-block;width:rem(19);height:rem(17);background:url("../images/ico_like.png") no-repeat 0 0/100% auto;
     &.active{background-position:0 100%;}
 }

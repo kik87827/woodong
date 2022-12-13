@@ -21,13 +21,13 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     }
 }
 .header_inwrap{display:flex;justify-content: space-between;align-items: center;}
-.header_main{flex:1;}
+.header_main{flex:1;min-width:0;font-size:0;line-height:0;}
 .header_title{}
 .header_title[class*="ico_"]{
     display:inline-flex;align-items:center;
     &:before{display:block;flex:0 0 rem(17.33);margin-right:rem(8);content:'';width:rem(17.33);height:rem(19);background:url("../images/map_bullet.png") no-repeat 0 0/100% auto;}
 }
-.header_ico_text{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;position:relative;top:-1px;color:#3b3b3b;}
+.header_ico_text{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;position:relative;top:-1px;color:#3b3b3b;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;}
 
 .header_title_group{
     display:flex;align-items: center;
@@ -40,7 +40,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .btn_history_delback{display:block;width:rem(22);height:rem(22);background:url("../images/ico_page_delback.png") no-repeat 50% 50%/rem(10.5) auto;flex:0 0 rem(22);}
 .btn_history_back{display:block;width:rem(24);height:rem(24);background:url("../images/btn_history_back.png") no-repeat 50% 50%/rem(6.7) rem(11.33);flex:0 0 rem(24);margin-right:rem(9)}
-.header_sub_title{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;color:#3b3b3b;}
+.header_sub_title{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;color:#3b3b3b;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;}
 .header_title_ico{display:inline-block;width:rem(19.33);height:rem(20.33);background:url("../images/docu_bullet.png") no-repeat 0 0/100% auto;margin-right:rem(8);}
 
 .header_else_wrap{
@@ -51,7 +51,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     &.pos_right{right:rem(16);}
 }
 .head_menu_list{
-    display:flex;justify-content:flex-end;align-items:center;margin-right:rem(5);
+    display:flex;justify-content:flex-end;align-items:center;margin-right:rem(5);font-size:0;line-height:0;
     > li{
         margin-right:rem(20);
         &:last-of-type{margin-right:0;}
