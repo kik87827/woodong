@@ -30,13 +30,14 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 .header_ico_text{display:inline-block;font-size:rem(16.66);line-height:1;font-weight:700;position:relative;top:-1px;color:#3b3b3b;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;}
 
 .header_title_group{
-    display:flex;align-items: center;
-    &.type2{justify-content: center;
+    display:flex;align-items: center;margin-right:rem(10);
+    &.type2{justify-content: center;margin-right:0;
         .header_sub_title{flex:1;min-width:0;padding-right:rem(40.5);text-align: center;}
     }
-    &.type3{justify-content: center;
+    &.type3{justify-content: center;margin-right:0;
         .header_sub_title{flex:1;min-width:0;text-align: center;}
     }
+    .badge{margin-left:rem(5)}
 }
 .btn_history_delback{display:block;width:rem(22);height:rem(22);background:url("../images/ico_page_delback.png") no-repeat 50% 50%/rem(10.5) auto;flex:0 0 rem(22);}
 .btn_history_back{display:block;width:rem(24);height:rem(24);background:url("../images/btn_history_back.png") no-repeat 50% 50%/rem(6.7) rem(11.33);flex:0 0 rem(24);margin-right:rem(9)}
@@ -122,3 +123,14 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .bottom_menu_text{display:block;color:#323232;font-size:11px;line-height:1;font-weight:500;}
 
+.bottom_quickitem_wrap{height:0;position:relative;}
+
+.bottom_quickitem_list{
+    position:absolute;bottom:0;right:rem(16);
+    > li{
+        &:last-of-type{}
+    }
+}
+.bottom_quickitem{display:block;border-radius:100%;width:rem(59);height:rem(59);background:#4857cb url("../images/ico_big_payment.png") no-repeat 50% 50%/100% auto;
+    box-shadow: 2.192px 4.494px 16px 0px rgba(30, 30, 30, 0.18);
+}

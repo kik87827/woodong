@@ -1074,9 +1074,11 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .header_title_group {
   display: flex;
   align-items: center;
+  margin-right: 0.625rem;
 }
 .header_title_group.type2 {
   justify-content: center;
+  margin-right: 0;
 }
 .header_title_group.type2 .header_sub_title {
   flex: 1;
@@ -1086,11 +1088,15 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 .header_title_group.type3 {
   justify-content: center;
+  margin-right: 0;
 }
 .header_title_group.type3 .header_sub_title {
   flex: 1;
   min-width: 0;
   text-align: center;
+}
+.header_title_group .badge {
+  margin-left: 0.3125rem;
 }
 
 .btn_history_delback {
@@ -1335,6 +1341,25 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   font-size: 11px;
   line-height: 1;
   font-weight: 500;
+}
+
+.bottom_quickitem_wrap {
+  height: 0;
+  position: relative;
+}
+
+.bottom_quickitem_list {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+}
+.bottom_quickitem {
+  display: block;
+  border-radius: 100%;
+  width: 3.6875rem;
+  height: 3.6875rem;
+  background: #4857cb url("../images/ico_big_payment.png") no-repeat 50% 50%/100% auto;
+  box-shadow: 2.192px 4.494px 16px 0px rgba(30, 30, 30, 0.18);
 }
 
 /*! jQuery UI - v1.11.4 - 2017-08-09
@@ -3139,6 +3164,7 @@ input.input_search::input-placeholder {
   width: 1.4375rem;
   height: 1.4375rem;
   vertical-align: middle;
+  flex: 0 0 1.4375rem;
 }
 .badge > img {
   vertical-align: middle;
@@ -3952,6 +3978,10 @@ input.control_props:checked + .control_props_label:after {
   color: #fff;
   background-color: #ab0033;
 }
+.btn_submit_box.type2 {
+  color: #fff;
+  background-color: #323232;
+}
 
 .mid_guide_copy_group {
   text-align: center;
@@ -4236,6 +4266,48 @@ input.control_props:checked + .control_props_label:after {
 }
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #ab0033;
+}
+
+.head_insert {
+  margin-top: -1rem;
+  padding-bottom: 1rem;
+}
+
+.map_api_tail_wrap {
+  margin: 0.4375rem 1rem 0;
+}
+
+.btn_ico_box {
+  display: block;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: #fbf2f5;
+  padding: 1.0625rem 1.0625rem 1.125rem;
+}
+
+.btn_ico_box[class*=ico_] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_ico_box[class*=ico_]:before {
+  display: inline-block;
+  content: "";
+  width: 1.083125rem;
+  height: 1.083125rem;
+  background: url("../images/ico_map.png") no-repeat 0 0/100% auto;
+  flex: 0 0 1.083125rem;
+  position: relative;
+  top: 1px;
+  margin-right: 0.375rem;
+}
+
+.ico_box_text {
+  font-size: 1rem;
+  color: #ab0033;
+  font-weight: 500;
+  display: inline-block;
+  line-height: 1;
 }
 
 /* 공통 popup */

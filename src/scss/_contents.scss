@@ -179,7 +179,7 @@ input.input_search{flex:1;min-width:0;background:none;height:rem(44);line-height
 .data_spec_else{font-size:rem(11);font-family: 'Montserrat Regular';color:#a8a8a8;margin-top:rem(9);}
 .spec_main_para{font-size:rem(19);color:#323232;font-weight:700;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;line-height:1.3;}
 .badge{
-    display:inline-block; width:rem(23);height:rem(23);vertical-align:middle;
+    display:inline-block; width:rem(23);height:rem(23);vertical-align:middle; flex:0 0 rem(23);
     > img{vertical-align: middle;}
 }
 .data_spec_else_wrap{display:block;margin-top:rem(5);}
@@ -427,6 +427,9 @@ input.control_props:checked + .control_props_label:after{left:rem(24)}
     &.primary{
         color:#fff;background-color:#ab0033;
     }
+    &.type2{
+        color:#fff;background-color:#323232;
+    }
 }
 .mid_guide_copy_group{text-align: center;padding:rem(100) rem(16);}
 .mid_guide_copy_group:before{display:block;content:'';width:rem(51);height:rem(56.33);margin:0 auto;background:url("../images/ico_warn2.png") no-repeat 0 0/100% auto;}
@@ -546,6 +549,30 @@ input.control_props:checked + .control_props_label:after{left:rem(24)}
         &.swiper-pagination-bullet-active{background:#ab0033;}
     }
 }
+.head_insert{margin-top:rem(-16);padding-bottom:rem(16);}
+
+.map_api_tail_wrap{margin:rem(7) rem(16) 0;}
+.btn_ico_box_group{}
+.btn_ico_box{display:block;text-align: center;border-radius:rem(8);background:#fbf2f5;padding:rem(17) rem(17) rem(18);}
+.btn_ico_box[class*="ico_"]{
+    display:flex;justify-content:center;align-items:center;
+    &:before{display:inline-block;content:'';width:rem(17.33);height:rem(17.33);background:url("../images/ico_map.png") no-repeat 0 0/100% auto;flex:0 0 rem(17.33);position:relative;top:1px;margin-right:rem(6)}
+}
+.ico_box_text{font-size:rem(16);color:#ab0033;font-weight:500;display:inline-block;line-height:1;}
+
+.map_result_list_wrap{}
+.map_result_list{
+    > li{
+        &:last-of-type{}
+    }
+}
+.map_result_item{}
+.map_result_main{
+    &:after{}
+}
+.map_result_main_text{}
+.map_result_sub{}
+
 
 /* 공통 popup */
 .popup_wrap{position:fixed;top:0;left:0;width:100%;height:100%;z-index:100000;display:none;align-items: center;justify-content: center;min-width:rem(280);overflow:hidden;flex-wrap:wrap;}
