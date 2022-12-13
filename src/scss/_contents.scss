@@ -640,3 +640,48 @@ input.control_props:checked + .control_props_label:after{left:rem(24)}
     .btn_card{}
 }
 .btn_card{display:inline-block;font-weight:500;color:#fff;font-size:rem(12.66);line-height:1;border-radius:rem(8);background:#ab0033;padding:rem(10.66) rem(16);}
+
+.get_data_write_item{}
+.get_data_para{color:#323232;font-size:rem(14);display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;line-height:1.5;}
+.get_data_img{
+    margin-top:rem(16);font-size:0;line-height:0;background:#ececec;border-radius:rem(15);position:relative;overflow:hidden;
+    > img{box-shadow: 0px 2px 13.76px 2.24px rgba(25, 25, 25, 0.06);width:100%;}
+}
+.get_else_group{
+    margin-top:rem(3);
+}
+.get_else_row{display:flex;justify-content: space-between;align-items: center;font-size:0;line-height:0;padding:rem(14.66) 0;border-bottom:1px solid #d7d7d7;
+    &:last-of-type{border-bottom:0;padding-bottom:0;}
+}
+.get_else_cols{
+    &:last-of-type{}
+}
+.get_keydata{display:inline-block;font-weight:500;color:#8d8d8d;font-size:rem(12.3);line-height:1;}
+.get_keysub{display:inline-block;color:#a8a8a8;font-size:rem(10.66);line-height:1;}
+.item_count_list{
+    display:flex;align-items:center;
+    > li{
+        margin-right:rem(13.33);
+        &:last-of-type{margin-right:0;}
+    } 
+}
+.item_count_obj{display:inline-flex;align-items: center;}
+.item_count_ico{
+    display:inline-block;flex:0 0 rem(12);margin-right:rem(4);width:rem(12);height:rem(12);background:url("../images/ico_data_tail.png") no-repeat 0 0/100% auto;
+    &.ico_01{background-position:0 0;}
+    &.ico_02{background-position:0 100%;}
+}
+.item_keyvalue_group{
+    
+    .item_key,
+    .item_value{display:inline-block;color:#a8a8a8;font-size:rem(10.66);line-height:1;}
+    .item_key{}
+    .item_value{margin-left:rem(2);}
+}
+
+.secret_item{
+    margin-bottom:rem(15);display:flex;align-items:center;
+    &:before{display:block;margin-right:rem(8);content:'';width:rem(25.66);height:rem(25.66);flex:0 0 rem(25.66);border-radius:100%;background:#323232 url("../images/ico_secret.png") no-repeat 50% 50%/100% auto;}
+}
+.secret_text{display:inline-block;color:#323232;font-size:rem(14);line-height:1;}
+

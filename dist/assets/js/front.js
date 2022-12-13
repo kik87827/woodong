@@ -303,9 +303,13 @@ function commonForm() {
 function bottomLayer() {
   const bottom_layer = document.querySelector(".bottom_layer_wrap");
   const bottom_quickitem_list = document.querySelector(".bottom_quickitem_list");
-  const bottom_quickitem_list_height = bottom_quickitem_list !== null ? bottom_quickitem_list.getBoundingClientRect().height : 0;
+  var bottom_quickitem_list_height = bottom_quickitem_list !== null ? bottom_quickitem_list.getBoundingClientRect().height : 0;
   const page_wrap = document.querySelector(".page_wrap");
   const middle_wrap = document.querySelector(".middle_wrap");
+
+  if (bottom_quickitem_list.classList.contains("type2")) {
+    bottom_quickitem_list_height += 48;
+  }
 
   action();
   window.addEventListener("resize", () => {
@@ -314,11 +318,8 @@ function bottomLayer() {
 
   function action() {
     if (bottom_layer !== null) {
-      if (page_wrap.classList.contains("flex_layout")) {
-        middle_wrap.style.paddingBottom = `${bottom_layer.getBoundingClientRect().height + bottom_quickitem_list_height}px`;
-      } else {
-        page_wrap.style.paddingBottom = `${bottom_layer.getBoundingClientRect().height + bottom_quickitem_list_height}px`;
-      }
+      middle_wrap.style.paddingBottom = `0px`;
+      page_wrap.style.paddingBottom = `${bottom_layer.getBoundingClientRect().height + bottom_quickitem_list_height}px`;
     }
   }
 }
