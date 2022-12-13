@@ -1198,6 +1198,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   padding-left: 0;
   padding-right: 0;
 }
+.middle_wrap.type3 {
+  padding-top: 1.6875rem;
+}
 
 .has_topbg {
   position: relative;
@@ -3612,12 +3615,17 @@ textarea.form_ta {
   width: 100%;
   height: 6.25rem;
   resize: none;
+  vertical-align: top;
   padding: 0.875rem;
   border: 1px solid #d8d8d8;
   font-weight: 500;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   box-sizing: border-box;
+}
+textarea.form_ta.type2 {
+  border-radius: 1rem;
+  border: 0;
 }
 
 .inline_form {
@@ -3995,6 +4003,33 @@ input.control_props:checked + .control_props_label:after {
 }
 .moreitem_ico.ico_delete {
   background-position: 0 100%;
+}
+
+.midform_title_row {
+  padding: 0 0.375rem 1.25rem;
+}
+
+.midform_title {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 500;
+  color: #3b3b3b;
+}
+
+.form_in_guide {
+  margin: 1rem 0.375rem 0;
+  color: #808080;
+  font-size: 0.8125rem;
+}
+
+.indent_para {
+  display: flex;
+}
+
+.indent_bullet {
+  flex: 0;
+  white-space: nowrap;
+  margin-right: 0.25rem;
 }
 
 /* 공통 popup */

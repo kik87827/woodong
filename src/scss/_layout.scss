@@ -75,6 +75,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 
 .middle_wrap{padding:0 rem(16) rem(66.66);box-sizing: border-box;
     &.type2{padding-left:0;padding-right:0;}
+    &.type3{padding-top:rem(27);}
 }
 .has_topbg{
     position:relative;
