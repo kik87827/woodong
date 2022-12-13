@@ -3037,6 +3037,7 @@ input.input_search::input-placeholder {
   border-radius: 0.875rem;
   overflow: hidden;
   background: #d7d7d7;
+  box-shadow: 0px 2px 13.76px 2.24px rgba(25, 25, 25, 0.06);
   flex: 0 0 6.6875rem;
   height: 6.6875rem;
 }
@@ -4189,6 +4190,39 @@ input.control_props:checked + .control_props_label:after {
   font-size: 0.958125rem;
   display: inline-block;
   line-height: 1;
+}
+
+.mv_wrap {
+  margin-top: 1.0625rem;
+}
+
+.mv-banner-wrap {
+  overflow: hidden;
+  border-radius: 0.875rem;
+}
+
+.mv_ban {
+  display: block;
+}
+.mv_ban > img {
+  width: 100%;
+}
+
+.mc_wrap .thum_data_list {
+  padding: 0.4375rem 0 0 0;
+}
+.swiper-pagination {
+  bottom: 1.1875rem;
+}
+.swiper-pagination .swiper-pagination-bullet {
+  background: #fff;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  opacity: 1;
+  border-radius: 100%;
+}
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #ab0033;
 }
 
 /* 공통 popup */

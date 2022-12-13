@@ -488,3 +488,25 @@ function commonTitle(){
     headerTitle.style.paddingRight = max_wid + "px";
   }
 }
+
+
+
+function mainbannerFunc(){
+  const mvbannerWrap = document.querySelector(".mv-banner-wrap");
+  const mvbanner = mvbannerWrap.querySelectorAll(".swiper-slide");
+  let mvbannerObj = null;
+  if(mvbannerWrap !== null && mvbanner.length>0){
+    mvbannerObj = new Swiper(".mv-banner-wrap",{
+      speed : 800,
+      loop : true,
+      pagination: {
+				clickable: true,
+				el: ".mv-banner-wrap .swiper-pagination",
+			},
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			}
+    });
+  }
+}

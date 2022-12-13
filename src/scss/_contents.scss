@@ -149,6 +149,7 @@ input.input_search{flex:1;min-width:0;background:none;height:rem(44);line-height
 }
 .thum_data_img{
     position:relative;border-radius:rem(14);overflow:hidden;background:#d7d7d7;
+    box-shadow: 0px 2px 13.76px 2.24px rgba(25, 25, 25, 0.06);
     flex:0 0 rem(107);
     height:rem(107);
     > img{}
@@ -526,7 +527,25 @@ input.control_props:checked + .control_props_label:after{left:rem(24)}
     }
 }
 .ver_boxmenu_text{position:relative;top:-1px;color:#323232;font-weight:500;font-size:rem(15.33);display:inline-block;line-height:1;}
+.mv_wrap{margin-top:rem(17);}
+.mv-banner-wrap{overflow:hidden;border-radius:rem(14);}
+.mv_ban{
+    display:block;
+    > img{width:100%;}
+}
+.mc_wrap{
+    .thum_data_list{
+        padding:rem(7) 0 0 0;
+        > li{}
+    }
+}
 
+.swiper-pagination{
+    bottom:rem(19);
+    .swiper-pagination-bullet{background:#fff;width:rem(5);height:rem(5);opacity: 1;border-radius:100%;
+        &.swiper-pagination-bullet-active{background:#ab0033;}
+    }
+}
 
 /* 공통 popup */
 .popup_wrap{position:fixed;top:0;left:0;width:100%;height:100%;z-index:100000;display:none;align-items: center;justify-content: center;min-width:rem(280);overflow:hidden;flex-wrap:wrap;}
