@@ -88,6 +88,11 @@ img.data_img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit: c
         .profile_spec_group{}
         .profile_sub{margin-top:rem(5)}
     }
+    &.type3{
+        padding:0;margin:0 0 rem(29.33) 0 !important;
+        .profile_spec_group{}
+        .profile_sub{margin-top:rem(5)}
+    }
 }
 .profile_sub{color:#a8a8a8;font-size:rem(13);color:#a8a8a8;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;line-height:1.3;margin-top:rem(8);
     &.type2{margin-top:rem(5);}
@@ -503,7 +508,7 @@ input.input_formbox{
     }
 }
 .ico_box_more{display:inline-block;width:rem(22);height:rem(22);background:url("../images/ico_more66.png") no-repeat 50% 50%/100% auto;opacity:.3;}
-.d_call_more_parent{position:relative;
+.d_call_more_parent{position:relative;display:inline-block;
     &.active{
         .more_box_layer{display:block;top:100%;right:rem(8)}
     }
@@ -517,6 +522,7 @@ input.input_formbox{
     margin-left:rem(6);position:relative;top:1px;
     &.ico_modify{background-position:0 0;}
     &.ico_delete{background-position:0 100%;}
+    &.ico_more{background:url("../images/ico_more_tail2.png") no-repeat 0 0/100% auto;width:rem(12.66);height:rem(12.66);flex:0 0 rem(12.66);}
 }
 .midform{}
 .midform_title_row{padding:0 rem(6) rem(20);}
@@ -700,6 +706,9 @@ input.input_formbox{
     &.type2{
         border-top:1px solid #d7d7d7;margin-top:rem(20);
     }
+    &.type3{
+        border-top:1px solid #d7d7d7;margin-top:rem(40);
+    }
 }
 .get_else_row{display:flex;justify-content: space-between;align-items: center;font-size:0;line-height:0;padding:rem(14.66) 0;border-bottom:1px solid #d7d7d7;
     &:last-of-type{border-bottom:0;padding-bottom:0;}
@@ -736,3 +745,13 @@ input.input_formbox{
 }
 .secret_text{display:inline-block;color:#323232;font-size:rem(14);line-height:1;}
 
+.get_moredata_zone{margin:rem(20) rem(-16) 0;}
+.moredata_tape{
+    background:#f3f3f3;display:flex;align-items:center;font-size:0;line-height:0;padding:rem(16);
+    .d_call_more_parent{flex:0 0 rem(22);}
+}
+.moredata_label{font-size:rem(14);color:#8d8d8d;line-height:1;flex:1;min-width:0;}
+.moredata_print_wrap{padding:rem(20) rem(16) 0;}
+.moredata_item{
+    &:last-of-type{}
+}
