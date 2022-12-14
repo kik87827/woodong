@@ -307,7 +307,7 @@ function bottomLayer() {
   const page_wrap = document.querySelector(".page_wrap");
   const middle_wrap = document.querySelector(".middle_wrap");
 
-  if (bottom_quickitem_list.classList.contains("type2")) {
+  if (bottom_quickitem_list !== null && bottom_quickitem_list.classList.contains("type2")) {
     bottom_quickitem_list_height += 48;
   }
 
