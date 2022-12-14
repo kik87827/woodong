@@ -412,23 +412,40 @@ function accordianItem(target) {
 
 function activeToggle(target) {
   const targetItem = target !== undefined ? document.querySelectorAll(target) : null;
+  var d_call_more_parent = document.querySelectorAll(".d_call_more_parent");
   if (targetItem.length > 0) {
     targetItem.forEach((element) => {
       element.addEventListener("click", (e) => {
         e.preventDefault();
         let thisEventObj = e.currentTarget;
+        let thisEventObjHeadParent = thisEventObj.closest(".d_call_more_parent");
         let thisEventObjSiblings = siblings(thisEventObj);
+        if (thisEventObjHeadParent !== null) {
+          d_call_more_parent.forEach((element) => {
+            if (thisEventObjHeadParent === element) {
+              return;
+            }
+            element.classList.remove("active");
+          });
+          thisEventObjHeadParent.classList.toggle("active");
+          return;
+        }
         thisEventObjSiblings.forEach((element) => {
           element.classList.remove("active");
         })
+
         thisEventObj.classList.toggle("active");
       });
     });
     document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("btn_box_more")) {
+      if (e.target.classList.contains("btn_box_more") || e.target.closest(".d_call_more_parent") !== null) {
         return;
       }
       targetItem.forEach((element) => {
+        let thisEventObjHeadParent = element.closest(".d_call_more_parent");
+        if (thisEventObjHeadParent !== null) {
+          thisEventObjHeadParent.classList.remove("active");
+        }
         element.classList.remove("active");
       });
     });
@@ -493,5 +510,28 @@ function mainbannerFunc() {
         disableOnInteraction: false
       }
     });
+  }
+}
+
+function inputBoxEvent(target) {
+  const targetItem = target !== undefined ? document.querySelectorAll(target) : null;
+  targetItem.forEach((element) => {
+    let thisElement = element;
+    let thisEventTarget = thisElement.querySelector("input.d_event");
+    currentAction(thisEventTarget, thisElement);
+    thisEventTarget.addEventListener("keyup", (e) => {
+      currentAction(thisEventTarget, thisElement);
+    });
+    thisEventTarget.addEventListener("focusout", (e) => {
+      currentAction(thisEventTarget, thisElement);
+    });
+  });
+
+  function currentAction(target, parent) {
+    if (target.value.length > 0) {
+      parent.classList.add("key_active");
+    } else {
+      parent.classList.remove("key_active");
+    }
   }
 }
