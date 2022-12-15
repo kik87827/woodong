@@ -2928,6 +2928,16 @@ img.data_img {
 .profile_item.type3 .profile_sub {
   margin-top: 0.3125rem;
 }
+.profile_item.type4 {
+  padding: 0;
+  margin: 0;
+}
+.profile_item.type4 .profile_sub {
+  margin-top: 0.3125rem;
+}
+.profile_item.type4 .profile_spec_group {
+  align-items: flex-start;
+}
 
 .profile_sub {
   color: #a8a8a8;
@@ -2942,6 +2952,12 @@ img.data_img {
 }
 .profile_sub.type2 {
   margin-top: 0.3125rem;
+}
+
+.another_text {
+  color: #a8a8a8;
+  font-family: "Montserrat Medium";
+  font-size: 0.75rem;
 }
 
 .profile_thum {
@@ -5010,6 +5026,9 @@ input.input_formbox {
   display: block;
   background-color: rgb(255, 255, 255);
   padding: 1.395625rem 1.375rem;
+}
+.databox > .profile_item + .get_data_write_item {
+  margin-top: 0.625rem;
 }
 
 .databox_title_row {
