@@ -304,8 +304,12 @@ function bottomLayer(){
   const page_wrap = document.querySelector(".page_wrap");
   const middle_wrap = document.querySelector(".middle_wrap");
   
-  if(bottom_quickitem_list !== null && bottom_quickitem_list.classList.contains("type2")){
-    bottom_quickitem_list_height += 48;
+  if(bottom_quickitem_list !== null){
+    if(bottom_quickitem_list.classList.contains("type2")){
+      bottom_quickitem_list_height += 48;
+    }else{
+      bottom_quickitem_list_height += 24;
+    }
   }
 
   action();
@@ -526,5 +530,23 @@ function inputBoxEvent(target){
       }else{
         parent.classList.remove("key_active");
       }
+  }
+}
+
+function responTextarea(){
+  const respon_ta = document.querySelector(".respon_ta");
+  const bottom_layer_wrap = document.querySelector(".bottom_layer_wrap");
+  var bottom_layer_wrap_height = bottom_layer_wrap.getBoundingClientRect().height;
+  var respon_ta_height = window.innerHeight - respon_ta.getBoundingClientRect().top - bottom_layer_wrap_height;
+
+  action();
+  window.addEventListener("resize",()=>{
+    action();
+  });
+
+  function action(){
+    bottom_layer_wrap_height = bottom_layer_wrap.getBoundingClientRect().height;
+    respon_ta_height = window.innerHeight - respon_ta.getBoundingClientRect().top - bottom_layer_wrap_height;
+    respon_ta.style.height = `${respon_ta_height }px`;
   }
 }

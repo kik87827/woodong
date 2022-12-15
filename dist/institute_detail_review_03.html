@@ -22,13 +22,38 @@
 				<div class="header_main">
 					<div class="header_title_group">
 						<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
-						<h1 class="header_sub_title">타이틀</h1>
+						<h1 class="header_sub_title">리뷰 작성</h1>
 					</div>
 				</div>
 			</header>
-			<section class="middle_wrap">
-				내용이 들어갑니다.
+			<section class="middle_wrap type3">
+				<div class="midform">
+					<div class="midform_title_row">
+						<p class="midform_title">리뷰 내용</p>
+					</div>
+					<div class="midform_content_row">
+						<div class="form_ta_wrap">
+							<textarea rows="10" cols="10" class="form_ta type2 respon_ta">
+각 학년별로 다양한 진도의 수업이 있어서 내가 원하는 과정
+을 선택 수강하면 됩니다.
+
+물론 사전에 테스트를 실시하였는데, 만약 수 1과정을 수강하
+려한다면 그 전 과정 즉, 수상과 수하를 테스트 봤었습니다.
+							</textarea>
+						</div>
+					</div>
+				</div>
 			</section>
+			<div class="bottom_layer_wrap type2">
+				<div class="btn_submit_box_wrap">
+					<a href="javascipt:;" class="btn_submit_box primary">저장하기</a>
+				</div>
+			</div>
+			<script>
+				window.addEventListener("load", () => {
+					responTextarea();
+				});
+			</script>
 		</div>
 	</form>
 </body>

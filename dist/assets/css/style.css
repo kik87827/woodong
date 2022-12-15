@@ -3883,6 +3883,9 @@ textarea.form_ta.type2 {
   border-radius: 1rem;
   border: 0;
 }
+textarea.form_ta.respon_ta {
+  height: calc(100vh - 6.25rem);
+}
 
 .inline_form {
   display: flex;
@@ -5025,6 +5028,9 @@ input.input_formbox {
 .databox_list > li.nodata_li {
   padding: 9.375rem 0;
 }
+.databox_list > li.nodata_li.type2 {
+  padding: 3.04125rem 0;
+}
 .databox_list > li:last-of-type {
   margin-bottom: 0;
 }
@@ -5181,5 +5187,38 @@ input.input_formbox {
   font-weight: 700;
   text-align: center;
   margin-top: 0.625rem;
+}
+
+.btn_midpos_wrap {
+  margin: 1.66625rem 1rem 0;
+  text-align: center;
+}
+
+.btn_bigbox {
+  display: inline-block;
+  border: 1px solid #ab0033;
+  border-radius: 6.25rem;
+  padding: 1.04125rem 2.395625rem;
+  font-size: 0;
+  line-height: 0;
+  background: #fff;
+}
+.btn_bigbox[class*=ico_] .bigbox_text:before {
+  display: block;
+  margin-right: 0.4375rem;
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  background: url("../images/ico_review.png") no-repeat 0 0/100% auto;
+}
+
+.bigbox_text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.04125rem;
+  color: #ab0033;
+  font-weight: 700;
+  line-height: 1;
 }
 /*# sourceMappingURL=style.css.map */

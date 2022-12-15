@@ -402,6 +402,7 @@ select.form_select{
 .form_ta_wrap{}
 textarea.form_ta{font-family: 'Noto Sans KR';width:100%;height:rem(100);resize:none;vertical-align:top;padding:rem(14);border:1px solid #d8d8d8;font-weight:500;border-radius:rem(8);font-size:rem(14);box-sizing: border-box;
     &.type2{border-radius:rem(16);border:0;}
+    &.respon_ta{height:calc(100vh - rem(100))}
 }
 .inline_form{display:flex;align-items: center;margin:0 rem(-6.5);}
 .inline_cols{flex:1;margin:0 rem(6.5);}
@@ -789,6 +790,7 @@ input.input_formbox{
         margin-bottom:rem(13.33);
         &.nodata_li{
             padding:rem(150) 0;
+            &.type2{padding:rem(48.66) 0}
         }
         &:last-of-type{margin-bottom:0;}
     }
@@ -832,3 +834,21 @@ input.input_formbox{
 .pcard_spec_main{font-size:rem(15);color:#323232;font-weight:500;}
 .pcard_spec_sub{font-size:rem(11.33);color:#323232;line-height:1.7;margin-top:rem(6);}
 .profile_quad_name{font-size:rem(13.33);color:#323232;line-height:1.3;font-weight:700;text-align:center;margin-top:rem(10);}
+
+.btn_midpos_wrap{
+    margin:rem(26.66) rem(16) 0;text-align: center;
+}
+.btn_bigbox{
+    display:inline-block;border:1px solid #ab0033;border-radius:rem(100);padding:rem(16.66) rem(38.33);
+    font-size:0;line-height:0;background:#fff;
+    &.ico_review{
+    }
+}
+.btn_bigbox[class*="ico_"]{
+    .bigbox_text{
+        
+        &:before{display:block;margin-right:rem(7);content:'';width:rem(20);height:rem(20);flex:0 0 rem(20);background:url("../images/ico_review.png") no-repeat 0 0/100% auto;}
+    }
+   
+}
+.bigbox_text{display:inline-flex;align-items: center;font-size:rem(16.66);color:#ab0033;font-weight:700;line-height:1;}
