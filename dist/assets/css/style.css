@@ -4299,6 +4299,9 @@ input.input_formbox {
   right: 1rem;
   border: 1px solid #d7d7d7;
 }
+.more_box_layer.type2 {
+  right: 0 !important;
+}
 
 .more_obj_list {
   padding: 0 0.5rem;
@@ -4315,6 +4318,9 @@ input.input_formbox {
   height: 1.375rem;
   background: url("../images/ico_more66.png") no-repeat 50% 50%/100% auto;
   opacity: 0.3;
+}
+.ico_box_more.type2 {
+  background-image: url("../images/ico_more66_2.png");
 }
 
 .d_call_more_parent {
@@ -5010,6 +5016,9 @@ input.input_formbox {
 .databox_list {
   margin: 1.66625rem 0 0 0;
 }
+.databox_list.type2 .databox {
+  padding: 1rem;
+}
 .databox_list > li {
   margin-bottom: 0.833125rem;
 }
@@ -5109,5 +5118,68 @@ input.input_formbox {
   font-family: "Noto Sans KR";
   font-weight: 700;
   display: inline-block;
+}
+
+.profile_card {
+  display: flex;
+}
+
+.pcard_thum_cols {
+  flex: 0 0 6.6875rem;
+}
+
+.pcard_thum {
+  width: 6.6875rem;
+  height: 6.6875rem;
+  border-radius: 0.875rem;
+  overflow: hidden;
+  position: relative;
+}
+.box_label_layer {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: #509923;
+  line-height: 1;
+  padding: 0.25rem 0.5625rem 0.3125rem;
+  background: #d9edcc;
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+.pcard_spec_cols {
+  flex: 1;
+  min-width: 0;
+  margin: 0.1875rem 0 0 0.875rem;
+}
+
+.pcard_spec_main_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0;
+  line-height: 0;
+}
+.pcard_spec_main {
+  font-size: 0.9375rem;
+  color: #323232;
+  font-weight: 500;
+}
+
+.pcard_spec_sub {
+  font-size: 0.708125rem;
+  color: #323232;
+  line-height: 1.7;
+  margin-top: 0.375rem;
+}
+
+.profile_quad_name {
+  font-size: 0.833125rem;
+  color: #323232;
+  line-height: 1.3;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0.625rem;
 }
 /*# sourceMappingURL=style.css.map */
