@@ -55,9 +55,12 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .head_menu_list{
     display:flex;justify-content:flex-end;align-items:center;margin-right:rem(5);font-size:0;line-height:0;
+    &.type2{
+        > li{margin-right:rem(10);}
+    }
     > li{
         margin-right:rem(20);
-        &:last-of-type{margin-right:0;}
+        &:last-of-type{margin-right:0 !important;}
     }
 }
 .head_menu{
