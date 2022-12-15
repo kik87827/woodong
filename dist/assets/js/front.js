@@ -557,3 +557,26 @@ function responTextarea() {
     respon_ta.style.height = `${respon_ta_height }px`;
   }
 }
+
+function simpleChatFunc() {
+  const d_simple_call = document.querySelector(".d_simple_call");
+  const simple_chatbox = document.querySelector(".simple_chatbox");
+  const chat_qus = document.querySelectorAll(".chat_qus");
+  const btn_chatsend = document.querySelector(".btn_chatsend");
+  d_simple_call.addEventListener("click", (e) => {
+    e.preventDefault();
+    simple_chatbox.classList.add("active");
+    d_simple_call.classList.add("hidden");
+    btn_chatsend.disabled = true;
+  });
+  if (chat_qus.length) {
+    chat_qus.forEach((element) => {
+      element.addEventListener("click", (e) => {
+        e.preventDefault();
+        simple_chatbox.classList.remove("active");
+        d_simple_call.classList.remove("hidden");
+        btn_chatsend.disabled = false;
+      });
+    });
+  }
+}

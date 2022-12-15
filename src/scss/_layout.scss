@@ -70,6 +70,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     &.ico_notice{background-position: 0 rem(-44);}
     &.ico_like{background-position: 0 rem(-66);}
     &.ico_share{background-position: 0 rem(-88);}
+    &.ico_call{background-position: 0 rem(-132);}
     &.ico_setting{background-position: 0 100%;}
     &.ico_more{background:url("../images/ico_more66.png") no-repeat 0 0/100% auto;}
 }
@@ -162,3 +163,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
         background-image:url("../images/ico_big_write.png");
     }
 }
+.bottom_textitem{display:flex;align-items:center;justify-content:center;border-radius:100%;width:rem(59);height:rem(59);background:#cd6d78;
+    box-shadow: 2.192px 4.494px 16px 0px rgba(30, 30, 30, 0.18);
+}
+.bottom_textitem_in{font-size:rem(14);color:#fff;font-size:rem(14);font-weight:700;line-height:1.25;display:block;}
