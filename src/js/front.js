@@ -573,3 +573,6 @@ function simpleChatFunc(){
     });
   }
 }
+
+function headBannerFunc(){
+}

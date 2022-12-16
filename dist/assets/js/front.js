@@ -580,3 +580,5 @@ function simpleChatFunc() {
     });
   }
 }
+
+function headBannerFunc() {}

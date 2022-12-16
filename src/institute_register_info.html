@@ -4,17 +4,59 @@
 <body class="front_body">
 	<form>
 		<div class="page_wrap">
-			<header class="header_wrap">
-				<div class="header_main">
-					<div class="header_title_group">
-						<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
-						<h1 class="header_sub_title">타이틀</h1>
+			<header class="header_wrap type4">
+				<div class="header_swiper_zone">
+					<div class="swiper-container head-banner-wrap">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><a href="#" class="mv_ban"><img src="./assets/images/swiper_sample_01.png" alt=""></a></div>
+							<div class="swiper-slide"><a href="#" class="mv_ban"><img src="./assets/images/swiper_sample_02.png" alt=""></a></div>
+							<div class="swiper-slide"><a href="#" class="mv_ban"><img src="./assets/images/swiper_sample_03.png" alt=""></a></div>
+						</div>
+						<div class="swiper-pagination"></div>
 					</div>
+					<div class="header_inlayer">
+						<div class="header_main">
+							<div class="header_title_group">
+								<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
+								<h1 class="header_sub_title">강남 이투스 청솔학원</h1>
+								<span class="badge"><img src="./assets/images/data_mark_01.png" alt=""></span>
+							</div>
+						</div>
+						<div class="header_else_wrap">
+							<ul class="head_menu_list">
+								<li><a href="#" class="head_menu ico_like"><span class="hdtext">좋아요</span></a></li>
+								<li><a href="#" class="head_menu ico_share"><span class="hdtext">공유</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="header_row_wrap">
+					<ul class="header_tab_list type2">
+						<li class="active"><a href="javascript:;" class="header_tab"><span class="header_tab_intext">수강안내</span></a></li>
+						<li><a href="javascript:;" class="header_tab"><span class="header_tab_intext">강좌안내</span></a></li>
+						<li><a href="javascript:;" class="header_tab"><span class="header_tab_intext">리뷰</span></a></li>
+						<li><a href="javascript:;" class="header_tab"><span class="header_tab_intext">학원정보</span></a></li>
+					</ul>
 				</div>
 			</header>
 			<section class="middle_wrap">
-				내용이 들어갑니다.
 			</section>
+			<script>
+				window.addEventListener("load",()=>{
+					headBannerFunc();
+				});
+			</script>
+			<div class="bottom_layer_wrap type2">
+				<div class="bottom_quickitem_wrap">
+					<ul class="bottom_quickitem_list">
+						<li><a href="#" class="bottom_quickitem"><span class="hdtext">결제하기</span></a></li>
+					</ul>
+				</div>
+				<div class="btn_submit_box_wrap">
+					<a href="javascipt:;" class="btn_submit_box type2">채팅상담</a>
+					<a href="javascipt:;" class="btn_submit_box primary">전화상담</a>
+				</div>
+			</div>
 		</div>
 	</form>
 </body>
