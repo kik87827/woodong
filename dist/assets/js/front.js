@@ -581,4 +581,54 @@ function simpleChatFunc() {
   }
 }
 
-function headBannerFunc() {}
+function headBannerFunc() {
+  const pageWrap = document.querySelector(".page_wrap");
+  const headbannerWrap = document.querySelector(".head-banner-wrap");
+  var documentBody = document.querySelector("body");
+  var headbannerWrapHeight = 0;
+  let addHeight = document.createElement("div");
+  let addHeightDom = null;
+  const headerWrap = document.querySelector(".header_wrap");
+  var headerWrapHeight = 0;
+  const headbanner = headbannerWrap.querySelectorAll(".swiper-slide");
+  let headbannerObj = null;
+  if (headbannerWrap !== null && headbanner.length > 0) {
+    headbannerObj = new Swiper(".head-banner-wrap", {
+      speed: 800,
+      loop: true,
+      pagination: {
+        clickable: true,
+        el: ".head-banner-wrap .swiper-pagination",
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      }
+    });
+  }
+
+  addHeight.classList.add("add_height");
+  pageWrap.append(addHeight);
+  addHeightDom = document.querySelector(".add_height");
+  bannerHeight();
+
+  window.addEventListener("resize", (e) => {
+    bannerHeight();
+  });
+
+  window.addEventListener("scroll", (e) => {
+    if (window.scrollY > headbannerWrapHeight) {
+      pageWrap.classList.remove("skin2");
+    } else if (window.scrollY <= headbannerWrapHeight / 4) {
+      pageWrap.classList.add("skin2");
+    }
+  });
+
+  function bannerHeight() {
+    headbannerWrapHeight = headbannerWrap !== null ? headbannerWrap.getBoundingClientRect().height : 0;
+    headerWrapHeight = headerWrap !== null ? headerWrap.getBoundingClientRect().height : 0;
+    if (window.innerWidth > window.innerHeight) {
+      headbannerWrapHeight = 0;
+    }
+  }
+}
