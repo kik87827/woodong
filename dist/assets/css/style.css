@@ -5017,7 +5017,10 @@ input.input_formbox {
   padding: 9.375rem 0;
 }
 .togglebox_list > li:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
+}
+.togglebox_list.type2 > li {
+  margin-bottom: 1.25rem;
 }
 
 .togglebox {
@@ -5394,6 +5397,7 @@ input.input_formbox {
   display: flex;
   align-items: center;
   position: relative;
+  z-index: 1;
 }
 .databox_main_row:before {
   display: block;
@@ -5411,9 +5415,16 @@ input.input_formbox {
   white-space: nowrap;
   margin-left: 0.625rem;
 }
+.databox_main_row .d_call_more_parent {
+  flex: 0;
+  font-size: 0;
+  line-height: 0;
+}
 
 .databox_main_para {
   font-size: 1.145625rem;
+  flex: 1;
+  min-width: 0;
   color: #323232;
   font-weight: 700;
   display: -webkit-box;
