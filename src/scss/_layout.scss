@@ -116,7 +116,13 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     }
 }
 
-.header_row_wrap{border-top:1px solid #d7d7d7;margin:rem(18) rem(-16) 0;}
+.header_row_wrap{border-top:1px solid #d7d7d7;margin:rem(18) rem(-16) 0;
+    &.type2{
+        
+    }
+    > .search_field{}
+}
+.header_row_in{padding:rem(15);}
 .header_tab_list{
     display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:0 0 rem(16) rem(16);
     > li {
