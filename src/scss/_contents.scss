@@ -69,6 +69,9 @@ img.data_img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit: c
 }
 .vertical_box_group{
     &.mtype2{margin-bottom:rem(30)}
+    &.type2{
+        .vertical_box{padding:0;}
+    }
 }
 .vertical_box{
     border-bottom:rem(6) solid #f3f3f3;padding:rem(20) rem(16);
@@ -86,6 +89,7 @@ img.data_img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit: c
     }
     &:last-of-type{border-bottom:0;}
     .btn_box_group{margin-top:rem(16);}
+    > .thum_data_item{margin:rem(24) rem(16);}
 }
 .profile_item_box{
     padding:rem(20) rem(16);
@@ -1322,7 +1326,11 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
         .box_label{margin-top:rem(8)}
     }
 }
-.data_summary_group{display:block;margin-top:rem(10)}
+.data_summary_group{display:block;margin-top:rem(10);
+    &.type2{margin-top:rem(15);}
+}
+.data_summary_kind{color:#323232;font-size:rem(13.33);display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;line-height:1.3;font-weight:500;}
+.data_summary_tail{color:#323232;font-size:rem(12);display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;line-height:1.3;margin-top:rem(5);}
 .data_summary{color:#323232;font-size:rem(12);display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;line-height:1.4;}
 .get_countform{border-top:1px solid #d7d7d7;padding:rem(13.33) rem(20) rem(13.33) rem(37);display:flex ;justify-content: space-between;align-items: center;}
 .get_countcols{}
@@ -1344,12 +1352,21 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
     display:inline-flex;align-items: center;
     .btn_item_del{margin-left:rem(10);}
 }
-.price_item{display:inline-flex;align-items: center;line-height:0;}
+.price_item{display:inline-block;line-height:0;font-size:0;
+    &.type2{
+        .price_item_value{font-family: 'Montserrat Regular';}
+        .price_item_unit{font-weight:400}
+    }
+    &.emp{
+        .price_item_value{font-size:rem(21);font-weight:700;color:#ab0033;}
+        .price_item_unit{font-weight:500;}
+    }
+}
 .price_item_value{
     color:#323232;font-family: 'Montserrat SemiBold';font-size:rem(16.66);line-height:1;display:inline-block;
     &.emp{color:#ab0033;}
 }
-.price_item_unit{font-weight:500;color:#323232;font-size:rem(15.33);line-height:1;display:inline-block;position:relative;top:-1px;}
+.price_item_unit{font-weight:500;color:#323232;font-size:rem(15.33);line-height:1;display:inline-block;}
 .btn_item_del{flex:0 0 rem(18);display:inline-block;width:rem(18);height:rem(18);background:#c1c1c1 url("../images/ico_del.png") no-repeat 50% 50%/100% auto;border-radius:100%;}
 
 .tail_value_group{}
@@ -1401,4 +1418,63 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
 .option_tailcols{
     &:last-of-type{}
     .get_value_item{}
+}
+
+.tail_spec_group{font-size:0;line-height:0;border-top:1px solid #d7d7d7;padding:rem(18) rem(22);display:flex;align-items: center;justify-content: space-between;}
+.tail_spec{
+    &:last-of-type{}
+    .price_item{}
+    .price_item_value{font-family: 'Montserrat Regular';}
+    .price_item_unit{font-weight:400}
+}
+.tail_spec_text{display:inline-block;line-height:1;color:#323232;font-size:rem(13.33)}
+
+.box_in_block{
+    padding:rem(20) rem(22);border-bottom:1px solid #8d8d8d;
+    &:last-of-type{border-bottom:0;padding-bottom:0;}
+    &.flex_type{
+        display:flex;justify-content:space-between;
+        .box_in_title{}
+        .price_item{}
+    }
+}
+
+.box_in_title{display:inline-block;color:#323232;font-weight:700;font-size:rem(16.66);line-height:1;}
+.box_in_cont{
+    &.type2{
+        margin-top:rem(16.66);
+    }
+    margin-top:rem(25);
+}
+
+.tb_form{
+    width:100%;
+    th,td{text-align:left;padding-bottom:rem(10);}
+    th{width:1px;padding-right:rem(23.33);}
+    td{
+       input.form_input{} 
+    }
+    tr:last-of-type{
+        th,td{padding-bottom:0;}
+    }
+}
+.tb_thtext{display:inline-block;color:#323232;line-height:1;font-size:rem(13.33);white-space: nowrap;}
+.tb_addform{
+    margin-top:rem(25);
+    .props_formitem{}
+}
+.form_guide_text{font-size:rem(13.33);color:#323232;display:block;}
+
+.keydata_list{
+    > li{
+        margin-bottom:rem(20);display:flex;justify-content:space-between;align-items:center;
+        &:last-of-type{margin-bottom:0;}
+    }
+}
+.keydata_dt{}
+.keydata_dd{
+    .price_item{}
+}
+.keydata_label{
+    &.emp{}
 }
