@@ -6667,9 +6667,6 @@ input.cardform:checked + .cardform_label:before {
   flex-basis: 6.25rem;
   height: 6.25rem;
 }
-.get_countproduct .thum_data_item .thum_data_spec_g {
-  padding-top: 0.25rem;
-}
 .get_countproduct .data_spec_main {
   display: block;
   line-height: 0;

@@ -1314,7 +1314,7 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
     .thum_data_item{
         flex:1;min-width:0;margin-left:rem(6);
         .thum_data_img{flex-basis: rem(100);height:rem(100)}
-        .thum_data_spec_g{padding-top:rem(4)}
+        // .thum_data_spec_g{padding-top:rem(4)}
     }
     .data_spec_main{
         display:block;line-height:0;
