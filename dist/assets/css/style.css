@@ -4106,6 +4106,9 @@ textarea.form_ta.type2 {
   border-radius: 1rem;
   border: 0;
 }
+textarea.form_ta.htype2 {
+  height: 10.375rem;
+}
 textarea.form_ta.respon_ta {
   height: calc(100vh - 6.25rem);
 }
@@ -6467,5 +6470,116 @@ input.boxform:checked + .boxform_label {
 .tail_tdcont {
   font-size: 0.875rem;
   color: #323232;
+}
+
+.dot_paging_wrap {
+  margin: 2rem 3.54125rem 2.5rem;
+}
+
+.dot_paging_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.dot_paging_list > li {
+  position: relative;
+  z-index: 1;
+}
+.dot_paging_list > li.active .dot_paging {
+  background: #c92657;
+  border-color: #ab0033;
+}
+.dot_paging_list:before {
+  display: block;
+  content: "";
+  height: 1px;
+  background: #d7d7d7;
+  position: absolute;
+  top: 50%;
+  left: 0.40625rem;
+  width: calc(100% - 0.40625rem);
+}
+
+.dot_paging {
+  display: block;
+  background: #f3f3f3;
+  border: 1px solid #d7d7d7;
+  border-radius: 100%;
+  width: 0.8125rem;
+  height: 0.8125rem;
+  box-sizing: border-box;
+}
+
+.step_form_wrap {
+  padding: 0 1.25rem;
+}
+
+.step_title_row {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.swiper_title {
+  font-weight: 500;
+  color: #323232;
+  line-height: 1;
+  font-size: 1.04125rem;
+}
+
+.step_form_row {
+  margin-top: 1.25rem;
+}
+
+.cardform_list > li {
+  margin-bottom: 0.625rem;
+}
+.cardform_list > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.cardform_item {
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+}
+
+input.cardform {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 0;
+  height: 0;
+  box-sizing: content-box;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.cardform_label {
+  background: #f4f0f0;
+  border-radius: 0.5625rem;
+  padding: 0.9375rem 1.125rem 0.9375rem 2.625rem;
+  font-size: 0.875rem;
+  color: #323232;
+  line-height: 1;
+  display: block;
+  position: relative;
+}
+.cardform_label:before {
+  display: block;
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid #ab0033;
+  background: #fff url("../images/ico_formcheck_small.png") no-repeat 0 0/100% auto;
+  border-radius: 100%;
+  position: absolute;
+  top: 0.96875rem;
+  left: 0.9375rem;
+}
+
+input.cardform:checked + .cardform_label:before {
+  background-position: 0 100%;
+  background-color: #c92657;
 }
 /*# sourceMappingURL=style.css.map */

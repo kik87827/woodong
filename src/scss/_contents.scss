@@ -445,6 +445,7 @@ select.form_select{
 .form_ta_wrap{}
 textarea.form_ta{font-family: 'Noto Sans KR';width:100%;height:rem(100);resize:none;vertical-align:top;padding:rem(14);border:1px solid #d8d8d8;font-weight:500;border-radius:rem(8);font-size:rem(14);box-sizing: border-box;
     &.type2{border-radius:rem(16);border:0;}
+    &.htype2{height:rem(166);}
     &.respon_ta{height:calc(100vh - rem(100))}
 }
 .inline_form{display:flex;align-items: center;margin:0 rem(-6.5);}
@@ -1241,3 +1242,31 @@ input.boxform:checked + .boxform_label{background:#ab0033;color:#fff;}
     &:before{display:block;content:'';width:rem(11);height:rem(11);border-radius:100%;width:rem(4);height:rem(4);border:rem(4) solid #e6b2c1;position:absolute;top:rem(2);left:0;background:#fff;}
 }
 .tail_tdcont{font-size:rem(14);color:#323232;}
+.dot_paging_wrap{margin:rem(32) rem(56.66) rem(40);}
+.dot_paging_list{display:flex;justify-content: space-between;align-items: center;position:relative;
+    > li{position:relative;z-index:1;
+        &.active{
+            .dot_paging{background:#c92657;border-color:#ab0033;}
+        }
+    }
+    &:before{display:block;content:'';height:1px;background:#d7d7d7;position:absolute;top:50%;left:rem(6.5);width:calc(100% - rem(6.5));}
+}
+.dot_paging{display:block;background:#f3f3f3;border:1px solid #d7d7d7;border-radius:100%;width:rem(13);height:rem(13);box-sizing: border-box;}
+
+.step_form_wrap{padding:0 rem(20);}
+.step_title_row{text-align: center;margin-bottom:rem(20);}
+.swiper_title{font-weight:500;color:#323232;line-height:1;font-size:rem(16.66);}
+.step_content_row{}
+.step_form_row{margin-top:rem(20);}
+.cardform_list{
+    > li{
+        margin-bottom:rem(10);
+        &:last-of-type{margin-bottom:0;}
+    }
+}
+.cardform_item{position:relative;font-size:0;line-height:0;}
+input.cardform{appearance: none;width:0;height:0;box-sizing: content-box;overflow: hidden;opacity: 0;}
+.cardform_label{background:#f4f0f0;border-radius:rem(9);padding:rem(15) rem(18) rem(15) rem(42);font-size:rem(14);color:#323232;line-height:1;display:block;position:relative;
+    &:before{display:block;content:'';width:rem(12);height:rem(12);border:1px solid #ab0033;background:#fff url("../images/ico_formcheck_small.png") no-repeat 0 0/100% auto;;border-radius:100%;position:absolute;top:rem(15.5);left:rem(15);}
+}
+input.cardform:checked + .cardform_label:before{background-position:0 100%;background-color:#c92657;}

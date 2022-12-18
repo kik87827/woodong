@@ -8,13 +8,167 @@
 				<div class="header_main">
 					<div class="header_title_group">
 						<a href="javascript:;" class="btn_history_back"><span class="hdtext">뒤로가기</span></a>
-						<h1 class="header_sub_title">타이틀</h1>
+						<h1 class="header_sub_title">글쓰기</h1>
 					</div>
 				</div>
 			</header>
-			<section class="middle_wrap">
-				내용이 들어갑니다.
+			<section class="middle_wrap type2">
+				<div class="dot_paging_wrap">
+					<ul class="dot_paging_list">
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
+					</ul>
+				</div>
+				<div class="swiper-container step-form">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" id="step_01">
+							<div class="step_form_wrap">
+								<div class="step_title_row"><p class="swiper_title">제목을 입력해주세요.</p></div>
+								<div class="step_content_row">
+									<textarea rows="10" cols="10" class="form_ta htype2" placeholder="제목을 입력해주세요."></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide" id="step_02">
+							<div class="step_form_wrap">
+								<div class="step_title_row"><p class="swiper_title">학년을 선택해주세요.</p></div>
+								<div class="step_content_row">
+									<div class="step_comp_row"><select class="form_select"><option>초등학교</option></select></div>
+									<div class="step_form_row">
+										<ul class="cardform_list">
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="props_01" name="props">
+													<label for="props_01" class="cardform_label">1학년</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="props_02" name="props">
+													<label for="props_02" class="cardform_label">2학년</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="props_03" name="props">
+													<label for="props_03" class="cardform_label">3학년</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="props_04" name="props">
+													<label for="props_04" class="cardform_label">4학년</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="props_05" name="props">
+													<label for="props_05" class="cardform_label">5학년</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="props_06" name="props">
+													<label for="props_06" class="cardform_label">6학년</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
+			<div class="bottom_layer_wrap type2">
+				<div class="btn_submit_box_wrap">
+					<a href="javascipt:;" class="btn_submit_box primary d_step_next">다음</a>
+				</div>
+			</div>
+			<script>
+				// 퍼블확인용
+				let url = window.location.href.split('?')[1];
+				let url_2 = url !== undefined ? url.split('#')[0] : null;
+				
+
+				window.addEventListener("load",()=>{
+					stepForm();
+				})
+				function stepForm(){
+					const stepFormWrap = document.querySelector(".step-form");
+					const stepslide = stepFormWrap.querySelectorAll(".swiper-slide");
+					const dot_paging_li = document.querySelectorAll(".dot_paging_list > li");
+					const d_step_next = document.querySelector(".d_step_next");
+					var stepFormObj = null;
+					var activedot = null;
+					if(stepFormWrap !== null && stepslide.length>0){
+						stepFormObj = new Swiper(".step-form",{
+							autoHeight : true,
+							speed : 800,
+							init : false
+						});
+						stepFormObj.on("init", ()=>{
+							pagingFunc();
+						});
+						stepFormObj.init();
+						stepFormObj.on("slideChange", ()=>{
+							pagingFunc();
+						});
+						// 다음버튼
+						d_step_next.addEventListener("click",(e)=>{
+							e.preventDefault();
+							stepFormObj.slideNext(800);
+						});
+						// 페이징
+						dot_paging_li.forEach((element,index)=>{
+							element.addEventListener("click",(e)=>{
+								e.preventDefault();
+								pagingFunc(index);
+								stepFormObj.slideTo(index,800);
+							});
+						})
+					}
+
+					function pagingFunc(get_index){
+						dot_paging_li.forEach((element)=>{
+							if(element.classList.contains("active")){
+								element.classList.remove("active");
+							}
+						});
+						if(get_index !== undefined){
+							dot_paging_li[get_index].classList.add("active");
+						}else{
+							dot_paging_li[stepFormObj.realIndex].classList.add("active");
+						}
+					}
+					function slideGo(target){
+						stepslide.forEach((element,index)=>{
+							if(element.getAttribute("id") == target){
+								stepFormObj.slideTo(index,0);
+							}
+						})
+					}
+
+					//퍼블확인용
+					if(url_2 === "02"){
+						slideGo("step_02");
+					}else if(url_2 === "03"){
+						slideGo("step_03");
+					}
+
+
+				}
+
+
+
+			</script>
 		</div>
 	</form>
 </body>
