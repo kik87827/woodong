@@ -671,3 +671,44 @@ function getPreviousSiblings(elem, filter) {
   }
   return sibs;
 }
+
+function optionCombo(){
+  var combo_target = document.querySelectorAll(".combo_target");
+  combo_target.forEach((element)=>{
+    var comboThis = element;
+    var comboParent = comboThis.closest(".combo_option_item");
+    var combo_option = comboParent.querySelectorAll(".combo_option");
+    element.addEventListener("click",(e)=>{
+      e.preventDefault();
+      var thisEventObj = e.currentTarget;
+      var thisEventObjParent = thisEventObj.closest(".combo_option_item");
+      thisEventObjParent.classList.toggle("active");
+      heightRender(thisEventObj);
+    }); 
+    combo_option.forEach((thisOption)=>{
+      thisOption.addEventListener("click",(e)=>{
+        e.preventDefault();
+        var thisEventObj = e.currentTarget;
+        comboThis.textContent = thisEventObj.textContent;
+        comboParent.classList.remove("active");
+      }); 
+    });
+  });
+
+  window.addEventListener("resize",()=>{
+    combo_target.forEach((element)=>{
+      heightRender(element);
+    });
+  });
+
+  function heightRender(target){
+    var thisObj = target;
+    var thisObjParent = thisObj.closest(".combo_option_item");
+    var thisObjOption = thisObjParent.querySelector(".combo_option_list_wrap");
+    
+    thisObjOption.style.removeProperty("max-height");
+    if(thisObjParent.classList.contains("active")){
+      thisObjOption.style.maxHeight = (thisObjParent.getBoundingClientRect().top - 20) +"px";
+    }
+  }
+}

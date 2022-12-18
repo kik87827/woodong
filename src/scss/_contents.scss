@@ -438,7 +438,7 @@ input.form_input{
 }
 
 select.form_select{
-    width:100%;border:1px solid #d8d8d8;font-weight:500;border-radius:rem(8);font-size:rem(14);height: rem(44);color:#323232;padding: 0 rem(50) 0 rem(14);box-sizing:border-box;font-family: 'Noto Sans KR';border-radius:rem(6);-webkit-border-radius:rem(6);
+    width:100%;border:1px solid #d8d8d8;font-weight:500;border-radius:rem(8);font-size:rem(14);height: rem(44);color:#323232;padding: 0 rem(50) 0 rem(14);box-sizing:border-box;font-family: 'Noto Sans KR';-webkit-border-radius:rem(8);
     background: #fff url("../images/ico_select.png") no-repeat 100% 50%/rem(37) auto;line-height: rem(42);-webkit-appearance:none;-moz-appearance:none;appearance:none;
     &::-ms-value {background: none; color:#323232;}
     &::-ms-expand {display: none;}
@@ -757,7 +757,9 @@ input.input_formbox{
 .botpos_vtitlow{padding:rem(27) rem(70) rem(27) rem(20);flex:0;display:flex;min-height:rem(70);align-items: center;box-sizing: border-box;}
 .botpos_vtit{font-size:rem(18);line-height:1;color:#000}
 .botpos_vcontlow{position:relative;overflow:hidden;padding:rem(40) rem(20) rem(32);flex:1;display:flex; flex-direction: column;
-    overflow-y:auto;
+    overflow-y:auto;min-height:0;z-index:10;
+    &.type2{padding-left:rem(22);padding-right:rem(22);}
+    &.d_type2{overflow:visible;}
     > *{width:100%;}
 }
 .btn_vsubmit_fxwrap{display:flex;align-items: center;height:rem(57);width:100%;-webkit-appearance: none;appearance: none;}
@@ -1360,3 +1362,23 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
 }
 .btn_midsubmit_wrap{margin:rem(20) rem(16) rem(30);}
 .btn_midsubmit{font-size:rem(16);font-weight:700;background:#ab0033;display:block;padding:rem(13);border-radius:rem(9);text-align: center;color:#fff;}
+
+.combo_option_item{position:relative;
+    &.active{
+        .combo_target{border-radius:0 0 rem(8) rem(8);}
+        .combo_option_list_wrap{display:block;}
+    }
+}
+.combo_target{display:block;border:1px solid #d8d8d8;border-radius:rem(9);color:#323232;font-size:rem(14);color:#323232;padding: rem(11) rem(55) rem(11) rem(20);box-sizing:border-box;font-family: 'Noto Sans KR';
+    background: #fff url("../images/ico_select.png") no-repeat 100% 50%/rem(37) auto;}
+.combo_option_list_wrap{
+    background:#fff;border-radius:rem(8) rem(8) 0 0;border:1px solid #d8d8d8;position:absolute;bottom:calc(100% - 1px);left:0;width:100%;box-sizing: border-box;
+    overflow:hidden;overflow:overlay;display:none;
+}
+.combo_option_list{
+    padding:rem(9) 0;
+    > li{
+        &:last-of-type{}
+    }
+}
+.combo_option{display:block;color:#323232;font-weight:500;font-size:rem(13.33);padding:rem(9) rem(20);}

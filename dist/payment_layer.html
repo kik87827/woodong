@@ -25,7 +25,19 @@
 		<div class="popup_wrap type2" id="samplePopup">
 			<div class="bg_dim"></div>
 			<div class="botpos_vlayer">
-				<div class="botpos_vcontlow">내용이 들어갑니다.</div>
+				<div class="botpos_vcontlow d_type2">
+					<div class="combo_option_item">
+						<a href="#" class="combo_target">옵션을 선택해주세요.</a>
+						<div class="combo_option_list_wrap">
+							<ul class="combo_option_list">
+								<li><a href="#" class="combo_option">중등부 수학</a></li>
+								<li><a href="#" class="combo_option">중등부 영어</a></li>
+								<li><a href="#" class="combo_option">고등부 수학</a></li>
+								<li><a href="#" class="combo_option">고등부 영어</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 				<div class="botpos_vbtnlow">
 					<div class="btn_botsubmit_wrap">
 						<a href="javascript:;" class="btn_botsubmit type2"><span class="botsubmit_intext">장바구니</span></a>
@@ -52,6 +64,7 @@
 				e.preventDefault();
 				designPopup.popupHide();
 			});
+			optionCombo();
 		</script>
 	</form>
 </body>
