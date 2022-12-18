@@ -6558,6 +6558,7 @@ input.cardform {
 .cardform_label {
   background: #f4f0f0;
   border-radius: 0.5625rem;
+  cursor: pointer;
   padding: 0.9375rem 1.125rem 0.9375rem 2.625rem;
   font-size: 0.875rem;
   color: #323232;
@@ -6566,6 +6567,7 @@ input.cardform {
   position: relative;
 }
 .cardform_label:before {
+  cursor: pointer;
   display: block;
   content: "";
   width: 0.75rem;
@@ -6581,5 +6583,30 @@ input.cardform {
 input.cardform:checked + .cardform_label:before {
   background-position: 0 100%;
   background-color: #c92657;
+}
+
+.step_comp_list > li {
+  margin-bottom: 3.333125rem;
+}
+.step_comp_list > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.comp_item {
+  display: flex;
+  align-items: center;
+}
+.comp_item > .form_select {
+  flex: 1;
+  min-width: 0;
+}
+.comp_item .comp_unit {
+  margin-left: 0.8125rem;
+  flex: 0;
+  white-space: nowrap;
+  color: #323232;
+  font-size: 0.958125rem;
+  display: inline-block;
+  line-height: 1;
 }
 /*# sourceMappingURL=style.css.map */

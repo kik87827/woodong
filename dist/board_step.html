@@ -159,6 +159,135 @@
 								</div>
 							</div>
 						</div>
+						<div class="swiper-slide" id="step_04">
+							<div class="step_form_wrap">
+								<div class="step_title_row">
+									<p class="swiper_title">요일을 선택해주세요.</p>
+								</div>
+								<div class="step_content_row">
+									<div class="step_form_row">
+										<ul class="cardform_list">
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="week_01" name="week">
+													<label for="week_01" class="cardform_label">월요일</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="week_02" name="week">
+													<label for="week_02" class="cardform_label">화요일</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="week_03" name="week">
+													<label for="week_03" class="cardform_label">수요일</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="week_04" name="week">
+													<label for="week_04" class="cardform_label">목요일</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="week_05" name="week">
+													<label for="week_05" class="cardform_label">금요일</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="week_06" name="week">
+													<label for="week_06" class="cardform_label">토요일</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="week_07" name="week">
+													<label for="week_07" class="cardform_label">일요일</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide" id="step_05">
+							<div class="step_form_wrap">
+								<div class="step_title_row">
+									<p class="swiper_title">시간대를 선택해주세요.</p>
+								</div>
+								<div class="step_content_row">
+									<ul class="step_comp_list">
+										<li>
+											<div class="comp_item">
+												<select class="form_select">
+													<option>15시</option>
+												</select>
+												<span class="comp_unit">부터</span>
+											</div>
+										</li>
+										<li>
+											<div class="comp_item">
+												<select class="form_select">
+													<option>18시</option>
+												</select>
+												<span class="comp_unit">까지</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide" id="step_06">
+							<div class="step_form_wrap">
+								<div class="step_title_row">
+									<p class="swiper_title">수업방식을 선택해주세요.</p>
+								</div>
+								<div class="step_content_row">
+									<div class="step_form_row">
+										<ul class="cardform_list">
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="class_type_01" name="class_type">
+													<label for="class_type_01" class="cardform_label">학원</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="class_type_02" name="class_type">
+													<label for="class_type_02" class="cardform_label">1:1 과외</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="class_type_03" name="class_type">
+													<label for="class_type_03" class="cardform_label">방문 과외</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="class_type_04" name="class_type">
+													<label for="class_type_04" class="cardform_label">기타</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide" id="step_07">
+							<div class="step_form_wrap">
+								<div class="step_title_row">
+									<p class="swiper_title">연락처를 입력해주세요.</p>
+								</div>
+								<div class="step_content_row">
+									<textarea rows="10" cols="10" class="form_ta htype2" placeholder="학생의 현재 진도 상황을 입력해 주세요."></textarea>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -244,6 +373,12 @@
 						slideGo("step_03");
 					} else if (url_2 === "04") {
 						slideGo("step_04");
+					} else if (url_2 === "05") {
+						slideGo("step_05");
+					} else if (url_2 === "06") {
+						slideGo("step_06");
+					} else if (url_2 === "07") {
+						slideGo("step_07");
 					}
 
 
