@@ -24,6 +24,7 @@
 						<li><a href="#" class="dot_paging"></a></li>
 						<li><a href="#" class="dot_paging"></a></li>
 						<li><a href="#" class="dot_paging"></a></li>
+						<li><a href="#" class="dot_paging"></a></li>
 					</ul>
 				</div>
 				<div class="swiper-container step-form">
@@ -254,6 +255,53 @@
 								</div>
 							</div>
 						</div>
+						<div class="swiper-slide" id="step_08">
+							<div class="step_form_wrap">
+								<div class="step_title_row"><p class="swiper_title">연락처를 입력해주세요.</p></div>
+								<div class="step_content_row">
+									<input type="text" class="form_input" placeholder="연락처">
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide" id="step_09">
+							<div class="step_form_wrap">
+								<div class="step_title_row"><p class="swiper_title">(선택) 추가설명을 입력해주세요.</p></div>
+								<div class="step_content_row">
+									<textarea rows="10" cols="10" class="form_ta htype2" placeholder="학원이나 강사분께 추가로 하실 말씀을 적어주세요."></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide" id="step_10">
+							<div class="step_form_wrap">
+								<div class="step_title_row"><p class="swiper_title">(선택) 이미지를 첨부해주세요.</p></div>
+								<div class="step_content_row">
+									<div class="photo_upload_wrap">
+										<div class="photo_upload_form">
+											<div class="photo_upload_inner">
+												<div class="upload_count_wrap">
+													<span class="upload_count_current">1</span>
+													<span class="upload_count_part">/</span>
+													<span class="upload_count_length">1</span>
+												</div>
+											</div>
+											<input type="file" class="upload_file">
+										</div>
+										<div class="upload_data">
+											<div class="upload_data_img_wrap"></div>
+											<a href="#" class="btn_upload_delete"><span class="hdtext">삭제</span></a>
+										</div>
+										<!-- <div class="upload_data">
+											<div class="upload_data_img_wrap"><img src="./assets/images/temp_men_300x300.png" class="data_img" alt=""></div>
+											<a href="#" class="btn_upload_delete"><span class="hdtext">삭제</span></a>
+										</div>
+										<div class="upload_data">
+											<div class="upload_data_img_wrap"><img src="./assets/images/temp_men_300x300.png" class="data_img" alt=""></div>
+											<a href="#" class="btn_upload_delete"><span class="hdtext">삭제</span></a>
+										</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -343,6 +391,12 @@
 						slideGo("step_06");
 					}else if(url_2 === "07"){
 						slideGo("step_07");
+					}else if(url_2 === "08"){
+						slideGo("step_08");
+					}else if(url_2 === "09"){
+						slideGo("step_09");
+					}else if(url_2 === "10"){
+						slideGo("step_10");
 					}
 
 
