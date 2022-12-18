@@ -37,6 +37,54 @@
 							</ul>
 						</div>
 					</div>
+					<div class="option_getdata_group" style="display:none;">
+						<div class="option_getdata">
+							<div class="option_main_row">
+								<p class="option_main_title">고등부 수학</p>
+								<a href="#" class="btn_item_del"><span class="hdtext">삭제</span></a>
+							</div>
+							<div class="option_tail_row">
+								<div class="option_tailcols">
+									<div class="count_updown_item">
+										<a href="javascript:;" class="btn_count down"><span class="hdtext">-</span></a>
+										<span class="count_current">1</span>
+										<a href="javascript:;" class="btn_count up"><span class="hdtext">+</span></a>
+									</div>
+								</div>
+								<div class="option_tailcols">
+									<div class="get_value_item">
+										<div class="price_item">
+											<span class="price_item_value">320,000</span>
+											<span class="price_item_unit">원</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="option_getdata">
+							<div class="option_main_row">
+								<p class="option_main_title">고등부 수학</p>
+								<a href="#" class="btn_item_del"><span class="hdtext">삭제</span></a>
+							</div>
+							<div class="option_tail_row">
+								<div class="option_tailcols">
+									<div class="count_updown_item">
+										<a href="javascript:;" class="btn_count down"><span class="hdtext">-</span></a>
+										<span class="count_current">1</span>
+										<a href="javascript:;" class="btn_count up"><span class="hdtext">+</span></a>
+									</div>
+								</div>
+								<div class="option_tailcols">
+									<div class="get_value_item">
+										<div class="price_item">
+											<span class="price_item_value">320,000</span>
+											<span class="price_item_unit">원</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="botpos_vbtnlow">
 					<div class="btn_botsubmit_wrap">
@@ -49,6 +97,15 @@
 		</div>
 		<!-- // popup -->
 		<script>
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+
+			if (url_2 === "02") {
+				document.querySelector(".option_getdata_group").style.removeProperty("display");
+			}
+
 			// 선언
 			var designPopup = new DesignPopup({
 				selector: "#samplePopup"

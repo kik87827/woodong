@@ -1327,7 +1327,7 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
 .get_countform{border-top:1px solid #d7d7d7;padding:rem(13.33) rem(20) rem(13.33) rem(37);display:flex ;justify-content: space-between;align-items: center;}
 .get_countcols{}
 .count_updown_item{
-    display:flex;justify-content:space-between;border:1px solid #cecece;border-radius:rem(6);padding:rem(6);min-width:rem(74);box-sizing:border-box;
+    display:flex;justify-content:space-between;border:1px solid #cecece;border-radius:rem(6);padding:rem(6);width:rem(74);box-sizing:border-box;
     .btn_count{
         display:inline-block;width:rem(13.33);height:rem(13.33);border-radius:100%;position:relative;background:#f1f1f1;
         &:before,
@@ -1369,7 +1369,7 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
         .combo_option_list_wrap{display:block;}
     }
 }
-.combo_target{display:block;border:1px solid #d8d8d8;border-radius:rem(9);color:#323232;font-size:rem(14);color:#323232;padding: rem(11) rem(55) rem(11) rem(20);box-sizing:border-box;font-family: 'Noto Sans KR';
+.combo_target{display:block;border:1px solid #d8d8d8;border-radius:rem(9);color:#323232;font-size:rem(14);padding: rem(11) rem(55) rem(11) rem(20);box-sizing:border-box;font-family: 'Noto Sans KR';
     background: #fff url("../images/ico_select.png") no-repeat 100% 50%/rem(37) auto;}
 .combo_option_list_wrap{
     background:#fff;border-radius:rem(8) rem(8) 0 0;border:1px solid #d8d8d8;position:absolute;bottom:calc(100% - 1px);left:0;width:100%;box-sizing: border-box;
@@ -1382,3 +1382,23 @@ input.cardform:checked + .cardform_label:before{background-position:0 100%;backg
     }
 }
 .combo_option{display:block;color:#323232;font-weight:500;font-size:rem(13.33);padding:rem(9) rem(20);}
+
+.option_getdata_group{margin:rem(20) 0 0 0;}
+.option_getdata{
+    border:1px solid #d8d8d8;border-radius:rem(9);margin-bottom:rem(10);padding:rem(15) rem(20);
+    &:last-of-type{margin-bottom:0;}
+}
+.option_main_row{
+    display:flex;align-items:center;
+    .btn_item_del{flex:0 0 rem(18);margin-left:rem(10);}
+}
+.option_main_title{flex:1;color:#323232;font-weight:500;font-size:rem(13.33);display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;line-height:1.3;}
+
+.option_tail_row{
+    margin-top:rem(15);display:flex;align-items:center;justify-content:space-between;
+    .count_updown_item{}
+}
+.option_tailcols{
+    &:last-of-type{}
+    .get_value_item{}
+}
