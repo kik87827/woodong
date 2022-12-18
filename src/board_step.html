@@ -84,6 +84,59 @@
 								</div>
 							</div>
 						</div>
+						<div class="swiper-slide" id="step_03">
+							<div class="step_form_wrap">
+								<div class="step_title_row"><p class="swiper_title">과목을 선택해주세요.</p></div>
+								<div class="step_content_row">
+									<div class="step_form_row">
+										<ul class="cardform_list">
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="subject_01" name="subject">
+													<label for="subject_01" class="cardform_label">국어</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="subject_02" name="subject">
+													<label for="subject_02" class="cardform_label">영어</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="subject_03" name="subject">
+													<label for="subject_03" class="cardform_label">수학</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="subject_04" name="subject">
+													<label for="subject_04" class="cardform_label">논술</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="subject_05" name="subject">
+													<label for="subject_05" class="cardform_label">음악</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="subject_06" name="subject">
+													<label for="subject_06" class="cardform_label">미술</label>
+												</div>
+											</li>
+											<li>
+												<div class="cardform_item">
+													<input type="radio" class="cardform" id="subject_07" name="subject">
+													<label for="subject_07" class="cardform_label">컴퓨터</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -133,13 +186,16 @@
 								pagingFunc(index);
 								stepFormObj.slideTo(index,800);
 							});
-						})
+						});
 					}
 
 					function pagingFunc(get_index){
-						dot_paging_li.forEach((element)=>{
+						dot_paging_li.forEach((element,index)=>{
 							if(element.classList.contains("active")){
 								element.classList.remove("active");
+								for(var i=0; i<=stepFormObj.realIndex; i++){
+									dot_paging_li[i].classList.add("active");
+								}
 							}
 						});
 						if(get_index !== undefined){
@@ -156,11 +212,14 @@
 						})
 					}
 
+
 					//퍼블확인용
 					if(url_2 === "02"){
 						slideGo("step_02");
 					}else if(url_2 === "03"){
 						slideGo("step_03");
+					}else if(url_2 === "04"){
+						slideGo("step_04");
 					}
 
 
