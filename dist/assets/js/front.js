@@ -584,7 +584,6 @@ function simpleChatFunc() {
 function headBannerFunc() {
   const pageWrap = document.querySelector(".page_wrap");
   const headbannerWrap = document.querySelector(".head-banner-wrap");
-  var documentBody = document.querySelector("body");
   var headbannerWrapHeight = 0;
   let addHeight = document.createElement("div");
   let addHeightDom = null;
@@ -630,5 +629,26 @@ function headBannerFunc() {
     if (window.innerWidth > window.innerHeight) {
       headbannerWrapHeight = 0;
     }
+  }
+}
+
+function topBannerFunc() {
+  const topbannerWrap = document.querySelector(".top-banner-wrap");
+  const topbanner = topbannerWrap.querySelectorAll(".swiper-slide");
+  let topbannerObj = null;
+  console.log(topbannerObj, topbanner);
+  if (topbannerWrap !== null && topbanner.length > 0) {
+    topbannerObj = new Swiper(".top-banner-wrap", {
+      speed: 800,
+      loop: true,
+      pagination: {
+        clickable: true,
+        el: ".top-banner-wrap .swiper-pagination",
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      }
+    });
   }
 }
