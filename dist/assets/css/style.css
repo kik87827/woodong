@@ -5404,6 +5404,13 @@ input.boxform:checked + .boxform_label {
   line-height: 1.5;
 }
 
+.get_data_normal_para {
+  color: #323232;
+  font-size: 0.875rem;
+  display: block;
+  line-height: 1.5;
+}
+
 .get_data_tail_para {
   color: #323232;
   font-size: 0.875rem;
@@ -5484,6 +5491,15 @@ input.boxform:checked + .boxform_label {
   display: inline-flex;
   align-items: center;
 }
+.item_count_obj.active {
+  color: #bc335c !important;
+}
+.item_count_obj.active .item_count_ico {
+  background-image: url("../images/ico_data_tail_active.png");
+}
+.item_count_obj.active * {
+  color: #bc335c !important;
+}
 
 .item_count_ico {
   display: inline-block;
@@ -5500,6 +5516,10 @@ input.boxform:checked + .boxform_label {
   background-position: 0 100%;
 }
 
+.item_keyvalue_group {
+  display: inline-block;
+  vertical-align: middle;
+}
 .item_keyvalue_group .item_key,
 .item_keyvalue_group .item_value {
   display: inline-block;

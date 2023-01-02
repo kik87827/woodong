@@ -51,13 +51,13 @@
 							<div class="get_else_row">
 								<ul class="item_count_list">
 									<li>
-										<div class="item_count_obj">
+										<a href="#" class="item_count_obj d_toggle">
 											<span class="item_count_ico"></span>
 											<span class="item_keyvalue_group">
 												<span class="item_key">좋아요</span>
 												<span class="item_value">2</span>
 											</span>
-										</div>
+										</a>
 									</li>
 									<li>
 										<div class="item_count_obj">
@@ -126,6 +126,14 @@
 			<script>
 				activeToggle(".d_call_more");
 				inputBoxEvent(".input_formbox_parent");
+
+				document.querySelectorAll(".d_toggle").forEach((element) => {
+					element.addEventListener("click", (e) => {
+						e.preventDefault();
+						let thisEventObj = e.currentTarget;
+						thisEventObj.classList.toggle("active");
+					})
+				});
 			</script>
 		</div>
 	</form>

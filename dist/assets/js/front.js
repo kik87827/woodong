@@ -579,6 +579,16 @@ function simpleChatFunc() {
       });
     });
   }
+  if (simple_chatbox !== null) {
+    document.addEventListener("click", (e) => {
+      e.preventDefault();
+      let etargetObj = e.target;
+      if (etargetObj.closest(".simple_chatbox") === null && etargetObj.closest(".bottom_quickitem_list") === null) {
+        simple_chatbox.classList.remove("active");
+        d_simple_call.classList.remove("hidden");
+      }
+    })
+  }
 }
 
 function headBannerFunc() {
