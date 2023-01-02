@@ -22,18 +22,14 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
                 position:relative;
                 &:after{display:block;content:'';position:absolute;top:rem(-4);left:rem(-1);background:url("../images/btn_history_back_w.png") no-repeat 0 0/100% auto;width:rem(27);height:rem(31.66);}
             }
-            .head_menu.ico_like{
-                position:relative;background:none;
-                &:after{display:block;content:'';width:rem(40);height:rem(37);background:url("../images/ico_like_w.png") no-repeat 50% 50%/100% auto;position:absolute;top:rem(-8);left:rem(-9);}
-            }
-            .head_menu.ico_share{
-                position:relative;background:none;
-                &:after{display:block;content:'';width:rem(43);height:rem(43);background:url("../images/ico_share_w.png") no-repeat 50% 50%/100% auto;position:absolute;top:rem(-10);left:rem(-10);}
+            .head_menu{
+                background-image:url("../images/ico_topmenu_w.png");
             }
             .header_swiper_zone{
                 .head-banner-wrap{display:block;}
             }
             .header_inlayer{position:absolute;top:0;left:0;box-sizing: border-box;}
+            .ico_shadow{display:block;}
         }
     }
 }
@@ -103,7 +99,11 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     &.ico_search{background-position:0 0;}
     &.ico_list{background-position: 0 rem(-22);}
     &.ico_notice{background-position: 0 rem(-44);}
-    &.ico_like{background-position: 0 rem(-66);}
+    &.ico_like{background-position: 0 rem(-66);
+        &.active{
+            background:url("../images/ico_like_active.png") no-repeat 0 0/100% auto !important;
+        }
+    }
     &.ico_share{background-position: 0 rem(-88);}
     &.ico_call{background-position: 0 rem(-132);}
     &.ico_setting{background-position: 0 100%;}
@@ -114,6 +114,17 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
     &.active{
         .more_box_layer{display:block;}
     }
+}
+
+.head_menu_g{
+    position:relative;
+    .head_menu{position:relative;z-index:2;}
+    .ico_shadow{position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-size:100% auto;background-position: 0 0;}
+}
+.ico_shadow{
+    filter: blur(10px);-webkit-filter: blur(10px); opacity:.8;display:none;
+    &.like{background-image:url("../images/heart.svg");}
+    &.share{background-image:url("../images/share.svg");}
 }
 
 .header_row_wrap{border-top:1px solid #d7d7d7;margin:rem(18) rem(-16) 0;

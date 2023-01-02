@@ -591,6 +591,16 @@ function simpleChatFunc() {
   }
 }
 
+function toggleItem(...item) {
+  const items = document.querySelectorAll(item);
+  items.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      e.preventDefault();
+      element.classList.toggle("active");
+    });
+  });
+}
+
 function headBannerFunc() {
   const pageWrap = document.querySelector(".page_wrap");
   const headbannerWrap = document.querySelector(".head-banner-wrap");

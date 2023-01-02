@@ -1018,33 +1018,8 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   width: 1.6875rem;
   height: 1.97875rem;
 }
-.page_wrap.skin2 .header_wrap .head_menu.ico_like {
-  position: relative;
-  background: none;
-}
-.page_wrap.skin2 .header_wrap .head_menu.ico_like:after {
-  display: block;
-  content: "";
-  width: 2.5rem;
-  height: 2.3125rem;
-  background: url("../images/ico_like_w.png") no-repeat 50% 50%/100% auto;
-  position: absolute;
-  top: -0.5rem;
-  left: -0.5625rem;
-}
-.page_wrap.skin2 .header_wrap .head_menu.ico_share {
-  position: relative;
-  background: none;
-}
-.page_wrap.skin2 .header_wrap .head_menu.ico_share:after {
-  display: block;
-  content: "";
-  width: 2.6875rem;
-  height: 2.6875rem;
-  background: url("../images/ico_share_w.png") no-repeat 50% 50%/100% auto;
-  position: absolute;
-  top: -0.625rem;
-  left: -0.625rem;
+.page_wrap.skin2 .header_wrap .head_menu {
+  background-image: url("../images/ico_topmenu_w.png");
 }
 .page_wrap.skin2 .header_wrap .header_swiper_zone .head-banner-wrap {
   display: block;
@@ -1054,6 +1029,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   top: 0;
   left: 0;
   box-sizing: border-box;
+}
+.page_wrap.skin2 .header_wrap .ico_shadow {
+  display: block;
 }
 
 .add_height {
@@ -1274,6 +1252,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .head_menu.ico_like {
   background-position: 0 -4.125rem;
 }
+.head_menu.ico_like.active {
+  background: url("../images/ico_like_active.png") no-repeat 0 0/100% auto !important;
+}
 .head_menu.ico_share {
   background-position: 0 -5.5rem;
 }
@@ -1298,6 +1279,37 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 .head_menu_more.active .more_box_layer {
   display: block;
+}
+
+.head_menu_g {
+  position: relative;
+}
+.head_menu_g .head_menu {
+  position: relative;
+  z-index: 2;
+}
+.head_menu_g .ico_shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: 0 0;
+}
+
+.ico_shadow {
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  opacity: 0.8;
+  display: none;
+}
+.ico_shadow.like {
+  background-image: url("../images/heart.svg");
+}
+.ico_shadow.share {
+  background-image: url("../images/share.svg");
 }
 
 .header_row_wrap {
