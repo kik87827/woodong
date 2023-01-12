@@ -629,6 +629,7 @@ function headBannerFunc() {
   addHeight.classList.add("add_height");
   pageWrap.append(addHeight);
   addHeightDom = document.querySelector(".add_height");
+  addHeightDom.style.height = window.innerHeight + "px";
   bannerHeight();
 
   window.addEventListener("resize", (e) => {
@@ -638,8 +639,10 @@ function headBannerFunc() {
   window.addEventListener("scroll", (e) => {
     if (window.scrollY > headbannerWrapHeight) {
       pageWrap.classList.remove("skin2");
+      addHeightDom.style.height = `0px`;
     } else if (window.scrollY <= headbannerWrapHeight / 4) {
       pageWrap.classList.add("skin2");
+      addHeightDom.style.height = window.innerHeight + "px";
     }
   });
 
