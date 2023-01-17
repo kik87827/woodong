@@ -597,6 +597,8 @@ function toggleItem(...item){
 function headBannerFunc(){
   const pageWrap = document.querySelector(".page_wrap");
   const headbannerWrap = document.querySelector(".head-banner-wrap");
+  const headerRowZone = document.querySelector(".header_row_zone");
+  const headerRowWrap = document.querySelector(".header_row_wrap");
   var headbannerWrapHeight = 0;
   let addHeight = document.createElement("div");
   let addHeightDom = null;
@@ -622,21 +624,28 @@ function headBannerFunc(){
   addHeight.classList.add("add_height");
   pageWrap.append(addHeight);
   addHeightDom = document.querySelector(".add_height");
-  addHeightDom.style.height = window.innerHeight+"px";
+  //addHeightDom.style.height = window.innerHeight+"px";
   bannerHeight();
 
   window.addEventListener("resize",(e)=>{
     bannerHeight();
   });
   
+  var scrollY = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
   window.addEventListener("scroll",(e)=>{
-    if(window.scrollY > headbannerWrapHeight){
-      pageWrap.classList.remove("skin2");
-      addHeightDom.style.height = `0px`;
-    }else if(window.scrollY <= headbannerWrapHeight/4){
-      pageWrap.classList.add("skin2");
-      addHeightDom.style.height = window.innerHeight+"px";
+    scrollY = window.scrollY !== undefined ? window.scrollY : window.pageYOffset;
+    if(scrollY > headbannerWrapHeight){
+      headerRowWrap.classList.add("fixed");
+    }else{
+      headerRowWrap.classList.remove("fixed");
     }
+    // if(scrollY > headbannerWrapHeight){
+    //   pageWrap.classList.remove("skin2");
+    //  // addHeightDom.style.height = `0px`;
+    // }else if(scrollY <= headbannerWrapHeight/4){
+    //   pageWrap.classList.add("skin2");
+    //   //addHeightDom.style.height = window.innerHeight+"px";
+    // }
   });
 
   function bannerHeight(){
@@ -645,6 +654,7 @@ function headBannerFunc(){
     if(window.innerWidth > window.innerHeight){
       headbannerWrapHeight = 0;
     }
+    headerRowZone.style.height = headerRowZone.children[0].getBoundingClientRect().height + "px";
   }
 }
 

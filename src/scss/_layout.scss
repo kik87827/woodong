@@ -30,6 +30,18 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
             }
             .header_inlayer{position:absolute;top:0;left:0;box-sizing: border-box;}
             .ico_shadow{display:block;}
+            .header_row_wrap{position:absolute;top:0;left:0;width:100%;}
+            .header_inlayer_clone{
+                border-bottom:1px solid #d7d7d7;
+                .btn_history_back:after{background:url("../images/btn_history_back.png") no-repeat 50% 50%/rem(6.7) rem(11.33);flex:0 0 rem(24);}
+                .header_title_group{
+                    .header_sub_title,
+                    .badge{display:block;}
+                }
+                .head_menu{background-image:url("../images/ico_topmenu.png") !important;
+                    &.ico_like.active{background:url("../images/ico_like_active.png") no-repeat 0 0/100% auto !important;}
+                }
+            }
         }
     }
 }
@@ -53,6 +65,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .header_inwrap{display:flex;justify-content: space-between;align-items: center;position:relative;width:100%;}
 .header_inlayer{display:flex;justify-content: space-between;align-items: center;position:relative;width:100%;z-index:5;padding:rem(27) rem(16) rem(19);box-sizing: border-box;}
+.header_inlayer_clone{display:none;background:#fff;justify-content: space-between;align-items: center;position:relative;width:100%;z-index:5;padding:rem(27) rem(16) rem(19);box-sizing: border-box;}
 .header_main{flex:1;min-width:0;font-size:0;line-height:0;}
 .header_title{}
 .header_title[class*="ico_"]{
@@ -220,6 +233,19 @@ html:not(.touchmode) ::-webkit-scrollbar-track {background-color: transparent;bo
 }
 .bottom_textitem_in{font-size:rem(14);color:#fff;font-size:rem(14);font-weight:700;line-height:1.25;display:block;}
 
-.header_swiper_zone{position:relative;
-    .head-banner-wrap{display:none;}
+.header_swiper_zone{position:relative;overflow:hidden;
+    // .head-banner-wrap{display:none;}
+}
+.header_row_zone{position:relative;}
+.header_row_wrap{
+    
+    &.fixed{top:0;left:0;width:100%;z-index:30;position:fixed !important;
+        border-top:0 !important;
+        .header_inlayer_clone{display:flex;}
+        .header_tab_list{background:#fff;
+            box-shadow: 1px 6px 23px -4px rgba(0,0,0,0.1);
+        -webkit-box-shadow: 1px 6px 23px -4px rgba(0,0,0,0.1);
+        -moz-box-shadow: 1px 6px 23px -4px rgba(0,0,0,0.1);
+        }
+    }
 }
